@@ -128,6 +128,15 @@ while($i2<count($RefOutput)){
 	$i2++;
 }
 
+## clean Steps
+$rmv1_cmd="cd uploads && sh .file_remover && cd .. 2>/dev/null";
+$rmv2_cmd="rm ".$file_name." 2>/dev/null";
+
+exec($rmv1_cmd);
+exec($rmv2_cmd);
+
+##
+
 if(strcmp($own_output,$ref_output)==0){
     echo "Test passed";
 }else{
