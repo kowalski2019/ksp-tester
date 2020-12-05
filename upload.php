@@ -14,6 +14,9 @@ $uploadTestOk = false;
     $file_ext=strtolower(end($file_parts));
     $target_dir = "uploads";
 
+    if($file_size>134217728){
+        $errors[]="File to large";
+    }
     if(empty($errors)==true){
         move_uploaded_file($file_tmp,"$file_name");
         $uploadFileOk=true;
@@ -34,6 +37,9 @@ $uploadTestOk = false;
     $target_dir = "uploads";
     $extensions= array("nj","asm","bin","");
 
+    if($test_size>134217728){
+        $errors1[]="Test file to large";
+    }
     if(in_array($test_ext,$extensions)=== false){
         $errors1[]="extension not allowed, please choose a nj,asm or bin file.";
      }
@@ -138,9 +144,9 @@ exec($rmv2_cmd);
 ##
 
 if(strcmp($own_output,$ref_output)==0){
-    echo "Test passed";
+    echo "<h1>Test passed</h1>";
 }else{
-    echo "Test not passed";
+    echo "<h1>Test not passed</h1>";
 }
 
 include "assessment_result.php";

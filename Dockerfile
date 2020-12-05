@@ -1,4 +1,4 @@
-FROM php:7.4-cli
+FROM php:7-apache
 
 ENV TESTER_HOME /usr/tester
 
