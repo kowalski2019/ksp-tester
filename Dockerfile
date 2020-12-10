@@ -1,9 +1,12 @@
-FROM php:7-apache
+FROM php:7.2-apache
 
 ENV TESTER_HOME /usr/tester
 
 COPY . $TESTER_HOME/
 
-WORKDIR $TESTER_HOME
-ENTRYPOINT ["sh","-c"]
-CMD ["exec php -S localhost:4000 -t /usr/tester"]
+EXPOSE 80
+
+#WORKDIR $TESTER_HOME
+
+CMD ["/usr/sbin/apache2ctl","-D","FOREGROUNG"]
+
