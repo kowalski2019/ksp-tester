@@ -67,9 +67,36 @@ $version= $_POST["version"];
 $pipe="|";
 $own_cmd=$echo_inputs.$pipe." "; //construction la commande pour executer la machine virtuelle du user
 
+
+if($version == 2){
+	$ref_cmd=$echo_inputs.$pipe." ./refnjvm2 ";
+}
+else if($version == 3){
+	$ref_cmd=$echo_inputs.$pipe." ./refnjvm3 ";
+}
+else if($version == 4){
+	$ref_cmd=$echo_inputs.$pipe." ./refnjvm4 ";
+}
+else if($version == 5){
+	$ref_cmd=$echo_inputs.$pipe." ./refnjvm5 ";
+}
+else if($version == 6){
+	$ref_cmd=$echo_inputs.$pipe." ./refnjvm6 ";
+}
+else if($version == 7){
+	$ref_cmd=$echo_inputs.$pipe." ./refnjvm7 ";
+}
+else if($version == 8){
+	$ref_cmd=$echo_inputs.$pipe." ./refnjvm8 ";
+}
+
+/*
 if($version<=4){
     $ref_cmd=$echo_inputs.$pipe." ./refnjvm4 "; //. pour concatener les strings
 }else $ref_cmd=$echo_inputs.$pipe." ./refnjvm8 ";
+
+*/
+
 
 $RefOutput="";
 $OwnOutput="";
