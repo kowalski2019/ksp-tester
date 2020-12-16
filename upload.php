@@ -158,7 +158,7 @@ if($uploadFileOk && $uploadTestOk){
 
     if($version == 2){
         if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="./compile2 uploads/".$test_parts[0];
+		$compiler1="cd compilers && ./compile2 ..uploads/".$test_parts[0]." && cd ..";
              	// TODO check error possibility
             	exec($compiler1);
 		$compiled=true;
@@ -167,7 +167,7 @@ if($uploadFileOk && $uploadTestOk){
     }
     else if($version ==3 ){
         if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="./compile3 uploads/".$test_parts[0];
+		$compiler1="cd compilers && ./compile3 ..uploads/".$test_parts[0]." && cd ..";
              	// TODO check error possibility
             	exec($compiler1);
             	$compiled=true;
@@ -176,7 +176,7 @@ if($uploadFileOk && $uploadTestOk){
     }
     else if($version == 4){
         if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="./compile4 uploads/".$test_parts[0];
+		$compiler1="cd compilers && ./compile4 ..uploads/".$test_parts[0]." && cd ..";
             	// TODO check error possibility
             	exec($compiler1);
             	$compiled=true;
@@ -185,7 +185,7 @@ if($uploadFileOk && $uploadTestOk){
     }
     else if($version == 5){
         if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="./compile5 uploads/".$test_parts[0];
+		$compiler1="cd compilers && ./compile5 ..uploads/".$test_parts[0]." && cd ..";
             	// TODO check error possibility
             	exec($compiler1);
             	$compiled=true;
@@ -194,7 +194,7 @@ if($uploadFileOk && $uploadTestOk){
     }
     else if($version == 6){
         if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="./compile6 uploads/".$test_parts[0];
+		$compiler1="cd compilers && ./compile6 ..uploads/".$test_parts[0]." && cd ..";
              	// TODO check error possibility
             	exec($compiler1);
             	$compiled=true;
@@ -203,7 +203,7 @@ if($uploadFileOk && $uploadTestOk){
     }
     else if($version == 7){
         if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="./compile7 uploads/".$test_parts[0];
+		$compiler1="cd compilers && ./compile7 ..uploads/".$test_parts[0]." && cd ..";
              	// TODO check error possibility
             	exec($compiler1);
             	$compiled=true;
@@ -213,7 +213,7 @@ if($uploadFileOk && $uploadTestOk){
 
     else {
         if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="./compile8 uploads/".$test_parts[0];
+		$compiler1="cd compilers && ./compile8 ..uploads/".$test_parts[0]." && cd ..";
  		// TODO check error possibility
 		exec($compiler1);
 		$compiled=true;
@@ -222,11 +222,11 @@ if($uploadFileOk && $uploadTestOk){
 
     if($compiled){
         $own_cmd.="uploads/".$test_parts[0];
-        $ref_cmd.="../uploads/".$test_parts[0];
+        $ref_cmd.="../uploads/".$test_parts[0]." && cd ..";
     }
     else {
         $own_cmd.="uploads/".$test_name;
-        $ref_cmd.="../uploads/".$test_name;
+        $ref_cmd.="../uploads/".$test_name." && cd ..,";
     }
 }
 
