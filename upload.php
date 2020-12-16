@@ -69,25 +69,25 @@ $own_cmd=$echo_inputs.$pipe." "; //construction la commande pour executer la mac
 
 
 if($version == 2){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm2 ";
+	$ref_cmd=$echo_inputs.$pipe." ./referenz/refnjvm2 ";
 }
 else if($version == 3){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm3 ";
+	$ref_cmd=$echo_inputs.$pipe." ./referenz/refnjvm3 ";
 }
 else if($version == 4){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm4 ";
+	$ref_cmd=$echo_inputs.$pipe." ./referenz/refnjvm4 ";
 }
 else if($version == 5){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm5 ";
+	$ref_cmd=$echo_inputs.$pipe." ./referenz/refnjvm5 ";
 }
 else if($version == 6){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm6 ";
+	$ref_cmd=$echo_inputs.$pipe." ./referenz/refnjvm6 ";
 }
 else if($version == 7){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm7 ";
+	$ref_cmd=$echo_inputs.$pipe." ./referenz/refnjvm7 ";
 }
 else if($version == 8){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm8 ";
+	$ref_cmd=$echo_inputs.$pipe." ./referenz/refnjvm8 ";
 }
 
 /*
@@ -114,23 +114,49 @@ if($uploadFileOk && $uploadTestOk){
     $own_cmd.=$file_name." ";
 
     # check the test file
-    if($version <= 4){
-        if($test_ext=="nj" || $test_ext=="asm"){
-            $compiler1="./compile4 uploads/".$test_parts[0];
-            //verification d erreur
+    
+      if(($version == 2) && ($test_ext=="nj" || $test_ext=="asm") ){
+            $compiler1="./compile/compile2 uploads/".$test_parts[0];
             exec($compiler1);
             $compiled=true;
         }
-        ### reday for test
-
-    }
-    else {
-        if($test_ext=="nj" || $test_ext=="asm"){
-            $compiler1="./compile8 uploads/".$test_parts[0];
+      else if(($version == 3) && ($test_ext=="nj" || $test_ext=="asm")){
+      	    $compiler1="./compile/compile3 uploads/".$test_parts[0];
             exec($compiler1);
             $compiled=true;
-        }
-    }
+      
+      
+      }
+       else if(($version == 4) && ($test_ext=="nj" || $test_ext=="asm")){
+      	    $compiler1="./compile/compile4 uploads/".$test_parts[0];
+            exec($compiler1);
+            $compiled=true;
+       
+      }
+       else if(($version == 5) && ($test_ext=="nj" || $test_ext=="asm")){
+            $compiler1="./compile/compile5 uploads/".$test_parts[0];
+            exec($compiler1);
+            $compiled=true;
+       
+      }
+       else if(($version == 6) && ($test_ext=="nj" || $test_ext=="asm")){
+            $compiler1="./compile/compile6 uploads/".$test_parts[0];
+            exec($compiler1);
+            $compiled=true;
+       
+      }
+       else if(($version == 7) && ($test_ext=="nj" || $test_ext=="asm")){
+            $compiler1="./compile/compile7 uploads/".$test_parts[0];
+            exec($compiler1);
+            $compiled=true;
+       
+      }
+       else if(($version == 8) && ($test_ext=="nj" || $test_ext=="asm")){
+            $compiler1="./compile/compile8 uploads/".$test_parts[0];
+            exec($compiler1);
+            $compiled=true;
+       
+      }
 
     if($compiled){
         $own_cmd.="uploads/".$test_parts[0];

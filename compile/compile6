@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#compiler
+#compiler6
 
 if [ -e "$1.asm" ]; then
-	./nja4 $1.asm $1
+	./nja6 $1.asm $1
 elif [ -e "$1.nj" ]; then
-	./njc4 $1.nj --output $1.asm
-	./nja4 $1.asm $1
+	./njc6 $1.nj --output $1.asm
+	./nja6 $1.asm $1
 else
 	echo "nothing to do"
 fi
