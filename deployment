@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo docker run -tid --rm -p 5000:80 ksp_server -v /var/www/html php:7.2-apache

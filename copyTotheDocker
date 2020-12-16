@@ -1,0 +1,12 @@
+#!/bin/sh
+
+sudo docker cp compile4 ksp_server:/var/www/html
+sudo docker cp compile8 ksp_server:/var/www/html
+sudo docker cp nja4 ksp_server:/var/www/html
+sudo docker cp njc4 ksp_server:/var/www/html
+sudo docker cp nja8 ksp_server:/var/www/html
+sudo docker cp njc8 ksp_server:/var/www/html
+sudo docker cp refnjvm4 ksp_server:/var/www/html
+sudo docker cp refnjvm8 ksp_server:/var/www/html
+sudo docker cp uploads ksp_server:/var/www/html
+sudo docker cp upload.php ksp_server:/var/www/html
