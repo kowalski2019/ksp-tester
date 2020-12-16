@@ -1,12 +1,51 @@
-<?php //beging
+<?php //begin
+
+/*static variables */
+$actualName="a";
 $file_name=""; //variable commence par &
 $test_name="";
 $uploadFileOk = false;
 $uploadTestOk = false;
 
+/* functions */
+function generate_name($name){
+	$result="";
+	$tail="";
+	$test=0;
+	$i=0;
+	$n_size=strlen($name);
+	while($i<$n_size){
+		if($name[$i]=='z')
+			$test+=1;
+		$i+=1;
+	}
+
+	if($test==$n_size){
+		$i=0;
+		while($i<$test+1){
+			$result.="a";
+			$i+=1;
+		}
+	}
+	else {
+		$j=$n_size-1;
+		while($name[$j]=='z'){
+			$tail.="a";
+			$j-=1;
+		}
+		$result=substr($name,0,$j);
+		$result.=chr(ord($name[$j])+1).$tail;
+	}
+	return $result;
+}
+
+
  if(isset($_FILES["fileToUpload"])){//verification si un fichier est select
-    $errors= array(); //tableau vide 
+    $errors= array(); //tableau vide
     $file_name = $_FILES["fileToUpload"]["name"]; //function standart du fichier on recupere le nom
+    $tmp_ac_name=generate_name($actualName);
+    $file_name.=$tmp_ac_name;
+    $actualName = $tmp_ac_name;
     $file_size =$_FILES["fileToUpload"]["size"];//taille
     $file_tmp =$_FILES["fileToUpload"]["tmp_name"];//nom temporaire qui nous aide a deplacer notre fichier dans ntre server
     $file_type=$_FILES["fileToUpload"]["type"];//type
@@ -25,10 +64,13 @@ $uploadTestOk = false;
         print_r($errors);
      }
  }
- 
+
  if(isset($_FILES["testFile"])){
     $errors1= array();
-    $test_name = $_FILES["testFile"]["name"];
+    $tmp_ac_name=generate_name($actualName);
+    $test_name=$tmp_ac_name;
+    $actualName = $tmp_ac_name;
+    $test_name .= $_FILES["testFile"]["name"];
     $test_size =$_FILES["testFile"]["size"];
     $test_tmp =$_FILES["testFile"]["tmp_name"];
     $test_type=$_FILES["testFile"]["type"];
@@ -52,42 +94,42 @@ $uploadTestOk = false;
  }
 
 $def_Inputs = $_POST["defaultInput"]; //recuperation des valeurs du default input
-$default_in=explode(" ",$def_Inputs); //split tableau des different input 
+$default_in=explode(" ",$def_Inputs); //split tableau des different input
 $echo_inputs="echo -n "; //effite le nextline
 $i1=0;
 
 #building echo command
 while($i1<count($default_in)){
-    $echo_inputs.=$default_in[$i1]; 
+    $echo_inputs.=$default_in[$i1];
     $echo_inputs.=" ";
     $i1++;
-} 
+}
 ### echo -n input1 input2 input3 ...
 $version= $_POST["version"];
 $pipe="|";
 $own_cmd=$echo_inputs.$pipe." "; //construction la commande pour executer la machine virtuelle du user
 
-
+$ref_cmd="cd resources && ";
 if($version == 2){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm2 ";
+	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm2 ";
 }
 else if($version == 3){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm3 ";
+	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm3 ";
 }
 else if($version == 4){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm4 ";
+	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm4 ";
 }
 else if($version == 5){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm5 ";
+	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm5 ";
 }
 else if($version == 6){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm6 ";
+	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm6 ";
 }
 else if($version == 7){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm7 ";
+	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm7 ";
 }
 else if($version == 8){
-	$ref_cmd=$echo_inputs.$pipe." ./refnjvm8 ";
+	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm8 ";
 }
 
 /*
@@ -114,31 +156,77 @@ if($uploadFileOk && $uploadTestOk){
     $own_cmd.=$file_name." ";
 
     # check the test file
-    if($version <= 4){
+    if($version == 2){
         if($test_ext=="nj" || $test_ext=="asm"){
-            $compiler1="./compile4 uploads/".$test_parts[0];
-            //verification d erreur
-            exec($compiler1);
-            $compiled=true;
+		$compiler1="./compile2 uploads/".$test_parts[0];
+             	// TODO check error possibility
+            	exec($compiler1);
+		$compiled=true;
         }
-        ### reday for test
-
+        ### ready for test
     }
+    else if($version ==3 ){
+        if($test_ext=="nj" || $test_ext=="asm"){
+		$compiler1="./compile3 uploads/".$test_parts[0];
+             	// TODO check error possibility
+            	exec($compiler1);
+            	$compiled=true;
+        }
+        ### ready for test
+    }
+    else if($version == 4){
+        if($test_ext=="nj" || $test_ext=="asm"){
+		$compiler1="./compile4 uploads/".$test_parts[0];
+            	// TODO check error possibility
+            	exec($compiler1);
+            	$compiled=true;
+        }
+        ### ready for test
+    }
+    else if($version == 5){
+        if($test_ext=="nj" || $test_ext=="asm"){
+		$compiler1="./compile5 uploads/".$test_parts[0];
+            	// TODO check error possibility
+            	exec($compiler1);
+            	$compiled=true;
+	}
+        ### ready for test
+    }
+    else if($version == 6){
+        if($test_ext=="nj" || $test_ext=="asm"){
+		$compiler1="./compile6 uploads/".$test_parts[0];
+             	// TODO check error possibility
+            	exec($compiler1);
+            	$compiled=true;
+	}
+        ### ready for test
+    }
+    else if($version == 7){
+        if($test_ext=="nj" || $test_ext=="asm"){
+		$compiler1="./compile7 uploads/".$test_parts[0];
+             	// TODO check error possibility
+            	exec($compiler1);
+            	$compiled=true;
+       	}
+        ### ready for test
+    }
+
     else {
         if($test_ext=="nj" || $test_ext=="asm"){
-            $compiler1="./compile8 uploads/".$test_parts[0];
-            exec($compiler1);
-            $compiled=true;
-        }
+		$compiler1="./compile8 uploads/".$test_parts[0];
+ 		// TODO check error possibility
+		exec($compiler1);
+		$compiled=true;
+	}
     }
 
     if($compiled){
         $own_cmd.="uploads/".$test_parts[0];
-        $ref_cmd.="uploads/".$test_parts[0];
+        $ref_cmd.="../uploads/".$test_parts[0];
     }
     else {
         $own_cmd.="uploads/".$test_name;
-        $ref_cmd.="uploads/".$test_name;
+        $ref_cmd.="../uploads/".$test_name;
     }
 }
 
@@ -163,11 +251,11 @@ while($i2<count($RefOutput)){
 }
 
 ## clean Steps
-$rmv1_cmd="cd uploads && sh .file_remover && cd .. 2>/dev/null";
-$rmv2_cmd="rm ".$file_name." 2>/dev/null";
+#$rmv1_cmd="cd uploads && sh .file_remover && cd .. 2>/dev/null";
+#$rmv2_cmd="rm ".$file_name." 2>/dev/null";
 
-exec($rmv1_cmd);
-exec($rmv2_cmd);
+#exec($rmv1_cmd);
+#exec($rmv2_cmd);
 
 ##
 
