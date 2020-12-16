@@ -155,7 +155,7 @@ if($uploadFileOk && $uploadTestOk){
     $own_cmd.="./";
     $own_cmd.=$file_name." ";
 
-    # check the test file
+
     if($version == 2){
         if($test_ext=="nj" || $test_ext=="asm"){
 		$compiler1="./compile2 uploads/".$test_parts[0];
