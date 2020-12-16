@@ -10,15 +10,16 @@
   <input type="file" name="fileToUpload" id="fileToUpload"> e.g. : njvm (Your compiled machine)<br><br>
   <label for="Version">Choose a version:</label>
   <select name="version" id="version">
-   <!-- <option value="1">1</option>
+
+   
     <option value="2">2</option>
-    <option value="3">3</option> -->
+    <option value="3">3</option> 
     <option value="4">4</option>
-	<!-- <option value="5">5</option>
+    <option value="5">5</option>
     <option value="6">6</option>
-	<option value="7">7</option> -->
-	
+    <option value="7">7</option>
     <option value="8">8</option>
+
   </select>
   <br><br>
   Select a Ninja, ASM or Binary file to upload:
