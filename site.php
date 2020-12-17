@@ -12,7 +12,6 @@
       <input type="file" name="fileToUpload" id="fileToUpload"> e.g. : njvm (Your compiled machine)<br><br>
       <label for="Version">Choose a version:</label>
       <select name="version" id="version">
-
       
         <option value="2">2</option>
         <option value="3">3</option> 
