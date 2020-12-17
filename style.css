@@ -1,0 +1,14 @@
+#bloc_page
+{
+    width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+body
+{
+    
+    background-color: black;
+    color: white;
+
+}
