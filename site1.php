@@ -17,8 +17,8 @@
                 <input type="radio" name="choice" value="certain-test" id="certain-test" checked /> <label for="certain-test">Test certain functionality of your virtual machine</label><br />
                 <input type="radio" name="choice" value="auto-test" id="auto-test"  /> <label for="certain-test">Evaluate your ninja virtual machine</label><br />
             </p>
-            </p>
-                <input type="submit" value="OK" />
+            </p >
+                <input type="submit" value="OK" name="ok"/>
             </p>
         </form>
     </body>
