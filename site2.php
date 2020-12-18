@@ -28,7 +28,7 @@
                         exec($cmd_get_allTest.chr(ord($i)),$results,$ret);
                         $j=0;
                         while($j<count($results)){
-                            $select_list=$head.$results[$j].$middle.$results[$j].$tail."<br>";
+                            $select_list=$head.$results[$j].$middle.$results[$j].$tail."\n";
                             echo $select_list;
                             $j += 1; 
                         }
