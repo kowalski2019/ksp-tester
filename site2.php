@@ -9,7 +9,7 @@
     <h1>Tester Service</h1>
     <form action="testload.php" method="post" enctype="multipart/form-data">
       Select your Virtual-Machine to upload:
-      <input type="file" name="fileToUpload" id="fileToUpload"> e.g. : njvm (Your compiled machine)<br><br>
+      <input type="file" name="fileToUpload" id="fileToUpload" required/> e.g. : njvm (Your compiled machine)<br><br>
 
       <label for="test"> Select a Ninja, ASM or Binary file to upload: </label>
       <select name="test" id="test">

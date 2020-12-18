@@ -6,10 +6,11 @@
           <title>KSP Tester | Powered by @csmk</title>
   </head>
   <body>
-    <h1>Tester Service</h1>
+   
     <form action="upload.php" method="post" enctype="multipart/form-data">
+    <h1>Tester Service</h1>
       Select your Virtual-Machine to upload:
-      <input type="file" name="fileToUpload" id="fileToUpload"> e.g. : njvm (Your compiled machine)<br><br>
+      <input type="file" name="fileToUpload" id="fileToUpload" required/> e.g. : njvm (Your compiled machine)<br><br>
       <label for="Version">Choose a version:</label>
       <select name="version" id="version">
       
@@ -24,10 +25,10 @@
       </select>
       <br><br>
       Select a Ninja, ASM or Binary file to upload:
-      <input type="file" name="testFile" id="testFile"> e.g. : test.nj, test.asm or test.bin(test)<br><br>
+      <input type="file" name="testFile" id="testFile" required/> e.g. : test.nj, test.asm or test.bin(test)<br><br>
       Give some default inputs if necessary:
-      <input type="text" name="defaultInput">  e.g. : 12 3 34 ...<br><br><br>
-      <input type="submit" name="submit">
+      <input type="text" name="defaultInput"/>  e.g. : 12 3 34 ...<br><br><br>
+      <input type="submit" name="submit"/>
     </form>
 
   </body>
