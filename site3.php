@@ -24,8 +24,8 @@
       </select>
       <br><br>
       Give some default inputs if necessary:
-      <input type="text" name="defaultInput">  e.g. : 12 3 34 ...<br><br><br>
-      <input type="submit" name="submit">
+      <input type="text" name="defaultInput" id="text"/>  e.g. : 12 3 34 ...<br><br><br>
+      <input type="submit" name="submit" id="button">
     </form>
 
   </body>
