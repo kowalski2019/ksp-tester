@@ -19,14 +19,17 @@ body
 }
 
 #button{
-    height: 50px;
-    width: 100px;
+    height: 100px;
+    width: 200px;
+    font-size: xx-large;
 }
 #fileToUpload, #version, #text, #testFile, #test{ 
-    height: 35px;
-    width: 120px;
+    height: 50px;
+    width: 300px;
+    font-size: xx-large;
 }
 #radio{
     height: 35px;
     width: 35px;
+    font-size: xx-large;
 }
