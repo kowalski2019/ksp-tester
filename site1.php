@@ -6,16 +6,16 @@
           <title>KSP Tester | Powered by @csmk</title>
   </head>
   <body>
-   
+
     <form action="upload.php" method="post" enctype="multipart/form-data">
     <h1>Tester Service</h1>
       Select your Virtual-Machine to upload:
       <input type="file" name="fileToUpload" id="fileToUpload" required/> e.g. : njvm (Your compiled machine)<br><br>
       <label for="Version">Choose a version:</label>
       <select name="version" id="version">
-      
+
         <option value="2">2</option>
-        <option value="3">3</option> 
+        <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
         <option value="6">6</option>

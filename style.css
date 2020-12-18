@@ -1,6 +1,6 @@
 #bloc_page
 {
-   
+
     margin-left: 400px;
     margin-right: 400px;
 }
@@ -19,11 +19,11 @@ body
 }
 
 #button{
-    height: 100px;
+    height: 60px;
     width: 200px;
     font-size: xx-large;
 }
-#fileToUpload, #version, #text, #testFile, #test{ 
+#fileToUpload, #version, #text, #testFile, #test{
     height: 50px;
     width: 300px;
     font-size: xx-large;
