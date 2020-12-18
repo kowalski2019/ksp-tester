@@ -7,8 +7,13 @@
 
 body
 {
-
     background-color: dimgray;
     color: white;
-
+    font-size: xxx-large;
 }
+
+#menu
+{
+    margin-left: 400px;
+    margin-right: 400px;
+} 
