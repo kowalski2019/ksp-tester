@@ -11,7 +11,7 @@ if (isset ($_POST['choice'])){
 
             }
         else if(strcmp($_POST['choice'],"auto-test")==0){
-
+            include "site3.php";
         }
 }
     
