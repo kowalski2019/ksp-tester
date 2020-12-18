@@ -7,7 +7,7 @@
   </head>
   <body>
     <h1>Tester Service</h1>
-    <form action="testload.php" method="post" enctype="multipart/form-data">
+    <form action="upload1.php" method="post" enctype="multipart/form-data">
       Select your Virtual-Machine to upload:
       <input type="file" name="fileToUpload" id="fileToUpload" required/> e.g. : njvm (Your compiled machine)<br><br>
 

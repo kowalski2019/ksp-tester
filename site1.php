@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="style.css" />
-        <title>KSP Tester | Welcome</title>
-    </head>
-    <body>
-        <form action="homepage.php" method="post" enctype="multipart/form-data">
-            <div id="bloc_page">
-                <h1>welcome to Ksp-tester</h1>
-            
-            </div>
+  <head>
+          <meta charset="utf-8" />
+          <link rel="stylesheet" href="style.css" />
+          <title>KSP Tester | Powered by @csmk</title>
+  </head>
+  <body>
+   
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <h1>Tester Service</h1>
+      Select your Virtual-Machine to upload:
+      <input type="file" name="fileToUpload" id="fileToUpload" required/> e.g. : njvm (Your compiled machine)<br><br>
+      <label for="Version">Choose a version:</label>
+      <select name="version" id="version">
+      
+        <option value="2">2</option>
+        <option value="3">3</option> 
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
 
-                <fieldset id="menu">
-                    <legend>How can ksp-tester help you?</legend>
-                
-                   
-                    <input type="radio" name="choice" value="self-test" id="self-test" /> <label for="self-test">Test your virtual machine with a self-written test</label><br />
-                    <input type="radio" name="choice" value="certain-test" id="certain-test" checked /> <label for="certain-test">Test certain functionality of your virtual machine</label><br />
-                    <input type="radio" name="choice" value="auto-test" id="auto-test"  /> <label for="certain-test">Evaluate your ninja virtual machine</label><br />
-                    <input type="submit" value="OK" name="ok"/>
-                    
-                </fieldset>
-            
-            
-        </form>
-    </body>
+      </select>
+      <br><br>
+      Select a Ninja, ASM or Binary file to upload:
+      <input type="file" name="testFile" id="testFile" required/> e.g. : test.nj, test.asm or test.bin(test)<br><br>
+      Give some default inputs if necessary:
+      <input type="text" name="defaultInput"/>  e.g. : 12 3 34 ...<br><br><br>
+      <input type="submit" name="submit"/>
+    </form>
+
+  </body>
 </html>
