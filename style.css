@@ -1,8 +1,8 @@
 #bloc_page
 {
-    width: 900px;
-    margin: auto;
-    text-align: center;
+   
+    margin-left: 400px;
+    margin-right: 400px;
 }
 
 body
@@ -16,4 +16,17 @@ body
 {
     margin-left: 400px;
     margin-right: 400px;
-} 
+}
+
+#button{
+    height: 50px;
+    width: 100px;
+}
+#fileToUpload, #version, #text, #testFile, #test{ 
+    height: 35px;
+    width: 120px;
+}
+#radio{
+    height: 35px;
+    width: 35px;
+}
