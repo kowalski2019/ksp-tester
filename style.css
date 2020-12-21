@@ -33,3 +33,16 @@ body
     width: 35px;
     font-size: xx-large;
 }
+fieldset {
+    background-color: #51e40d;
+  }
+  
+  legend {
+    background-color: rgb(2, 82, 230);
+    color: white;
+    padding: 5px 10px;
+  }
+  
+  input {
+    margin: 5px;
+  }

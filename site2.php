@@ -23,9 +23,21 @@
                     $all_test=Array();
                     $t_index=0;
                     $i=2;
+                    $cmd_get_allTest1="ls KSP_Test/";
+                    exec($cmd_get_allTest1, $results, $ret);
+                    $j=0;
+                        while($j<count($results)){
+                            $select_list=$head.$results[$j].$middle.$results[$j].$tail."\n";
+                            echo $select_list;
+                            $j += 1; 
+                        }
+
+                    /*
                     while($i<9){
+                        $cmd_get_allTest="ls KSP_Test/ksp_test$i";
                         echo "<optgroup label=\"version$i\" >";
-                        exec($cmd_get_allTest.chr(ord($i)),$results,$ret);
+                       // exec($cmd_get_allTest.chr(ord($i)),$results,$ret);
+                       exec($cmd_get_allTest, $results, $ret);
                         $j=0;
                         while($j<count($results)){
                             $select_list=$head.$results[$j].$middle.$results[$j].$tail."\n";
@@ -36,7 +48,7 @@
                         $i+=1;
                         echo "</optgroup>";
                     }
-
+                    */
                     // buid now thw select list
                     /*
                     $i=0;
