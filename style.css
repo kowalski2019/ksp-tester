@@ -21,6 +21,12 @@ body
     margin-right: 400px;
 }
 
+#menu2
+{
+    margin-left: 40px;
+    margin-right: 100px;
+}
+
 #button{
     height: 60px;
     width: 200px;
