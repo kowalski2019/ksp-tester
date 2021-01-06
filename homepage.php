@@ -8,7 +8,7 @@
     <body>
         <form action="site.php" method="post" enctype="multipart/form-data">
             <div id="bloc_page">
-                <h1>welcome to Ksp-tester</h1>
+                <h1>Welcome to Ksp-tester</h1>
             
             </div>
 
