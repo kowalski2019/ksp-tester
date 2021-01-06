@@ -7,7 +7,10 @@
 
 body
 {
-    background-color: dimgray;
+    background-image: url("picture/picture4.jpg"); 
+	/*background-repeat: no-repeat;*/
+	background-size: 100%;
+    /*background-color: dimgray;*/
     color: white;
     font-size: xxx-large;
 }
@@ -34,7 +37,7 @@ body
     font-size: xx-large;
 }
 fieldset {
-    background-color: #51e40d;
+    background-color: #99e40d;
   }
   
   legend {
@@ -43,6 +46,7 @@ fieldset {
     padding: 5px 10px;
   }
   
-  input {
+input {
     margin: 5px;
   }
+  
