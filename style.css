@@ -7,7 +7,7 @@
 
 body
 {
-    background-image: url("picture/picture4.jpg"); 
+    background-image: url("picture/picture5.png"); 
 	/*background-repeat: no-repeat;*/
 	background-size: 100%;
     /*background-color: dimgray;*/
@@ -37,11 +37,11 @@ body
     font-size: xx-large;
 }
 fieldset {
-    background-color: #99e40d;
+    background-color: #0f0f0f;
   }
   
   legend {
-    background-color: rgb(2, 82, 230);
+    background-color: rgb(15, 15, 15);
     color: white;
     padding: 5px 10px;
   }
