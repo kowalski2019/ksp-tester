@@ -10,9 +10,9 @@ if (isset ($_POST['choice'])){
             include "site2.php";
 
             }
-        else if(strcmp($_POST['choice'],"auto-test")==0){
+       /* else if(strcmp($_POST['choice'],"auto-test")==0){
             include "site3.php";
-        }
+        }*/
 }
 
 ?>
