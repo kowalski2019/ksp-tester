@@ -12,8 +12,10 @@ cat .begin homepage.php .end > pagesForDocker/index.php
 
 rm .begin .end .tmp2 2>/dev/null
 
-sudo docker run -tid --rm -p 5000:80 --name ksp_server -v /var/www/html php:7.2-apache
+sudo docker run -d --rm -p 5000:80 --name ksp_server -v /var/www/html php:7.2-apache
 
 [ $# -eq 0 ] && ./copyTotheDocker 2>/dev/null
 
 [ $# -eq 0 ] && sudo docker exec ksp_server chmod -R 777 /var/www/html
+
+echo "ther ksp_server is available on the adress:=  localhost:5000"
