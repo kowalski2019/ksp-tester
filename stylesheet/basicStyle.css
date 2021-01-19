@@ -1,0 +1,27 @@
+/*
+* basic css-style
+* Claude Steph
+* @csmk / @ddf / @sfs
+*/
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: DodgerBlue;
+}
+
+.flex-container .box {
+    background-color: #f1f1f1;
+    width: 50%;
+    margin: 10px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+}
+.flex-container .box.boxIn {
+    background-color: #f1f1f1;
+    margin: 10px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 10px;
+}

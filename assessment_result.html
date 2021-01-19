@@ -1,51 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+
+  <!-- @sofoste -->
+  <!-- design revision -->
+  <!-- add some css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+        crossorigin="anonymous">
+  <!--other css-->
+  <link rel="stylesheet" href="stylesheet/stephStyle.css">
+  <link rel="stylesheet" href="stylesheet/basicStyle.css">
+
   <title>Assessment Result | Powered by @csmk</title>
-  <style>
-    .flex-container {
-      display: flex;
-      flex-wrap: nowrap;
-      background-color: DodgerBlue;
-    }
-    
-    .flex-container .box {
-      background-color: #f1f1f1;
-      width: 50%;
-      margin: 10px;
-      text-align: center;
-      line-height: 60px;
-      font-size: 20px;
-    }
-    .flex-container .box.boxIn {
-      background-color: #f1f1f1;
-      margin: 10px;
-      text-align: center;
-      line-height: 30px;
-      font-size: 10px;
-    }
-    </style>
-    </head>
-    <body>
-    <h1>Assessment Outputs</h1>
-    
+  </head>
+  <body class="card card-body bg-light">
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">KSP-TESTER</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#aboutUS">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="README.md" target="_blank">Readme</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Download</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search unavailable yet" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <h1 class="h1 text-center text-success">Assessment Outputs</h1>
     <div class="flex-container">
       <div class="box">
-        <h2>The Ref-Virtual Machine output<h2>
+        <h2 class="h2 font-monospace fw-bolder">The Ref-Virtual Machine output</h2>>
         <div class="boxIn">
         <p><?php echo $ref_output; ?></p>
         </div>
       </div>
       <div class="box">
-        <h2>Your Virtual Machine output<h2>
+        <h2 class="h2 font-monospace fw-bolder">Your Virtual Machine output</h2>>
           <div class="boxIn">
               <p><?php echo $own_output; ?></p>
           </div>
       </div>
     </div>
-    
+    <!--clean up unnecessary code-->
     <p></p>
     <p><strong></strong></p>
+    <!--slide contributors-->
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="picture/picture1.jpg" class="d-block w-100" alt="contribution">
+        </div>
+        <div class="carousel-item">
+          <img src="picture/picture2.jpg" class="d-block w-100" alt="contribution">
+        </div>
+        <div class="carousel-item">
+          <img src="picture/picture3.jpg" class="d-block w-100" alt="contribution">
+        </div>
+        <div class="carousel-item">
+          <img src="picture/picture4.jpg" class="d-block w-100" alt="contribution">
+        </div>
+        <div class="carousel-item">
+          <img src="picture/csmk.jpg" class="d-block w-100" alt="contribution">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+    </div>
+    <!--About the contributor-->
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="aboutUS">
+    <!--Claude Steph-->
+      <div class="col">
+        <div class="card h-100 m-3">
+          <img src="picture/stephCMK.jpg" class="card-img-top m-4" alt="csmk" id="contributor0">
+          <div class="card-body">
+            <h5 class="card-title">Claude Stephane Manace Kouame</h5>
+            <p class="card-text">The Author.The genius creator of this helpful program.
+              Specifically designed for the Ninja Virtual Machine. Important notice: "NINJA IST NOT JAVA".
+              Steph loves music.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 3 days ago</small>
+          </div>
+        </div>
+      </div>
+      <!--sofoste-->
+      <div class="col">
+        <div class="card h-100 m-3">
+          <img src="picture/stephSF.jpg" class="card-img-top m-4" alt="sfs" id="contributor1">
+          <div class="card-body">
+            <h5 class="card-title">Stephane Sob Fouodji</h5>
+            <p class="card-text">A friend and co-author of this helpful tool. This program is a gift, designed to
+              help other studs.<br>
+              Important notice: "NINJA IST NOT JAVA". We both love music.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 15 minutes ago</small>
+          </div>
+        </div>
+      </div>
+      <!--Donald-->
+      <div class="col">
+        <div class="card h-100 m-3">
+          <img src="picture/donald.jpg" class="card-img-top m-4" alt="ddf" id="contributor2">
+          <div class="card-body">
+            <h5 class="card-title">Donald Donchi Fofack</h5>
+            <p class="card-text">A contributor. This program has been designed in order to help us
+              test our njvm-Code to see if it works or not and so on. NINJA IS NOT JAVA. We love music.
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last updated 2 weeks ago</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--footer-->
+    <div class="card-footer">
 
+    </div>
+    <!-- add some script separately if needed-->
+    <!-- Bootstrap Bundle with popper-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous">
+    </script>
 </body>
 </html>

@@ -1,0 +1,29 @@
+/**
+* designed for KSP-TESTER
+* @sofoste
+* @csmk / @ddf / @sfs
+*/
+
+/* styling image */
+#contributor0{
+    height: 50%;
+    width: 50%;
+    border: cadetblue;
+    border-left-color: black;
+    border-radius: 50%;
+}
+#contributor1{
+    height: 50%;
+    width: 50%;
+    border: cadetblue;
+    border-left-color: black;
+    border-radius: 50%;
+    box-shadow: #0f0f0f;
+}
+#contributor2{
+    height: 50%;
+    width: 50%;
+    border: cadetblue;
+    border-left-color: black;
+    border-radius: 50%;
+}
