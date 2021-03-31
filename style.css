@@ -5,6 +5,9 @@ body
     max-width: 100%;
     height: auto;
 }
+form{
+    color: #ffffff !important;
+}
 #welcomePage{
     background-color: #0f1a14;
     border: 1px solid black;
@@ -19,9 +22,10 @@ h1{
 
 #menu2
 {
-    margin-left: 40px;
-    margin-right: 100px;
+    margin-left: 40px !important;
+    margin-right: 100px !important;
 }
+
 
 .btn-success{
     height: 60px;
