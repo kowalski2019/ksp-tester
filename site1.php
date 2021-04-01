@@ -17,18 +17,21 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ">
-              <li class="nav-item ">
-                <a class="nav-link" href="#"></i>Home</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="#" >Contact</a>
-              </li>
-            </ul>
-          </div>
+          <ul class="navbar-nav ">
+            <li class="nav-item ">
+              <a class="nav-link" href="homepage.php"> </i>Home</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="about.php">About</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="contact.php" >Contact</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="help.php" >Help</a>
+            </li>
+          </ul>
+        </div>
         </div>
       </nav>
       <div class="container-fluid">
