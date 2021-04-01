@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Assessment Result | Powered by @csmk</title>
+  <link rel="shortcut icon" href="picture/icon3.jpeg" type="image/x-icon">
   <style>
     .flex-container {
       display: flex;
@@ -25,6 +26,7 @@
       font-size: 10px;
     }
     </style>
+
     </head>
     <body>
     <h1>Assessment Outputs</h1>

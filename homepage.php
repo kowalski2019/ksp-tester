@@ -6,7 +6,7 @@
         <title>KSP Tester | Welcome</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+        <link rel="shortcut icon" href="picture/icon3.jpeg" type="image/x-icon">
 
     </head>
     <body>
