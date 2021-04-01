@@ -11,7 +11,3 @@
 ## Start KSP-Tester localy with a docker container
 - just launch the bash script **deployment**
 - and join the homepage on : localhost:5000/src
-
-## Start KSP-Tester localy
-- just launch the bash script ' **deployment** '
-- and join the homepage on localhost:5000/src
