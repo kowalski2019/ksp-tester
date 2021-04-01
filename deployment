@@ -11,6 +11,9 @@ cat .begin src/site1.php .end > pagesForDocker/site1.php
 cat .begin .tmp2 .end > pagesForDocker/site2.php
 cat .begin src/site3.php .end > pagesForDocker/site3.php
 cat .begin src/homepage.php .end > pagesForDocker/index.php
+cat .begin src/about.php .end > pagesForDocker/about.php
+cat .begin src/contact.php .end > pagesForDocker/contact.php
+cat .begin src/help.php .end > pagesForDocker/help.php
 
 rm .begin .end .tmp2 2>/dev/null
 

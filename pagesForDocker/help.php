@@ -1,3 +1,5 @@
+<?php 
+ echo '
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,7 +38,7 @@
       </div>
     </nav>
     <div class="container-fluid" id="welcomePage" >
-            <h1>Contact</h1>
+            <h1>Help</h1>
 
     </div>
 
@@ -51,3 +53,5 @@
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </body>
 </html>
+'; 
+ ?>

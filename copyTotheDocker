@@ -1,10 +1,20 @@
 #!/bin/sh
 
 
-sudo docker cp pagesForDocker/site2.php  ksp_server:/var/www/html
-sudo docker cp pagesForDocker/site1.php  ksp_server:/var/www/html
-sudo docker cp pagesForDocker/site.php  ksp_server:/var/www/html
-sudo docker cp pagesForDocker/index.php ksp_server:/var/www/html
-sudo docker cp src/ass_res.php ksp_server:/var/www/html/assessment_result.php
+sudo docker exec ksp_server mkdir /var/www/html/src
+
+sudo docker cp pagesForDocker/site2.php  ksp_server:/var/www/html/src
+sudo docker cp pagesForDocker/site1.php  ksp_server:/var/www/html/src
+sudo docker cp pagesForDocker/site.php  ksp_server:/var/www/html/src
+sudo docker cp pagesForDocker/index.php ksp_server:/var/www/html/src
+sudo docker cp pagesForDocker/about.php ksp_server:/var/www/html/src
+sudo docker cp pagesForDocker/contact.php ksp_server:/var/www/html/src
+sudo docker cp pagesForDocker/help.php ksp_server:/var/www/html/src
+sudo docker cp src/homepage.php ksp_server:/var/www/html/src
+sudo docker cp src/ass_res.php ksp_server:/var/www/html/src/assessment_result.php
+sudo docker cp src/upload.php ksp_server:/var/www/html/src
+sudo docker cp src/upload1.php ksp_server:/var/www/html/src
+sudo docker cp src/upload2.php ksp_server:/var/www/html/src
+
 sudo docker cp resources ksp_server:/var/www/html
 sudo docker cp uploads ksp_server:/var/www/html

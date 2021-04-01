@@ -1,3 +1,6 @@
+<?php
+
+echo '
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,13 +38,17 @@
       <div class="box">
         <h2>The Ref-Virtual Machine output<h2>
         <div class="boxIn">
-        <p><?php echo $ref_output; ?></p>
+	<p>';
+	 echo $ref_output;
+	echo '</p>
         </div>
       </div>
       <div class="box">
         <h2>Your Virtual Machine output<h2>
           <div class="boxIn">
-              <p><?php echo $own_output; ?></p>
+	      <p>';
+    	echo $own_output;
+ 	echo '</p>
           </div>
       </div>
     </div>
@@ -51,3 +58,6 @@
 
 </body>
 </html>
+';
+
+?>
