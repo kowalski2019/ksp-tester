@@ -6,7 +6,7 @@
         <title>KSP Tester | Welcome</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="shortcut icon" href="picture/icon3.jpeg" type="image/x-icon">
+        <link rel="shortcut icon" href="../resources/pictures/icon3.jpeg" type="image/x-icon">
 
     </head>
     <body>
@@ -16,7 +16,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ">
             <li class="nav-item ">
@@ -36,30 +36,10 @@
       </div>
     </nav>
     <div class="container-fluid" id="welcomePage" >
-        <form action="site.php" method="post" enctype="multipart/form-data">
+            <h1>Help</h1>
 
-                <h1>Welcome to Ksp-tester</h1>
-
-
-
-                <fieldset id="menu">
-                    <legend>How can ksp-tester help you?</legend>
-
-
-                    <input type="radio" name="choice" value="self-test" id="radio" /> <label for="self-test">Test your virtual machine with a self-written test</label><br />
-                    <input type="radio" name="choice" value="certain-test" id="radio" checked /> <label for="certain-test">Test certain functionality of your virtual machine</label><br />
-                   <!--
-                    <input type="radio" name="choice" value="auto-test" id="radio"  /> <label for="certain-test">Evaluate your ninja virtual machine</label><br />
-                   -->
-                   <input class="btn btn-success" type="submit" value="OK" name="ok" id="button"/>
-
-                </fieldset>
-
-
-
-
-        </form>
     </div>
+
 
         <!-- jQuery library -->
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

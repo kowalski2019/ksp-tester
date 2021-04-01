@@ -76,7 +76,7 @@ function generate_name($name){
     $test_type=$_FILES["testFile"]["type"];
     $test_parts=explode(".",$test_name);
     $test_ext=strtolower(end($test_parts));
-    $target_dir = "uploads";
+    $target_dir = "../uploads";
     $extensions= array("nj","asm","bin","");
 
     if($test_size>134217728){
@@ -109,27 +109,28 @@ $version= $_POST["version"];
 $pipe="|";
 $own_cmd=$echo_inputs.$pipe." "; //construction la commande pour executer la machine virtuelle du user
 
-$ref_cmd="cd resources && ";
+$ref_cmd_path="../resources/references/";
+$ref_cmd="";
 if($version == 2){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm2 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm2 ";
 }
 else if($version == 3){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm3 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm3 ";
 }
 else if($version == 4){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm4 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm4 ";
 }
 else if($version == 5){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm5 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm5 ";
 }
 else if($version == 6){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm6 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm6 ";
 }
 else if($version == 7){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm7 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm7 ";
 }
 else if($version == 8){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm8 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm8 ";
 }
 
 /*
@@ -158,7 +159,7 @@ if($uploadFileOk && $uploadTestOk){
 
     if($version == 2){
         if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="cd compilers && ./compile2 ../uploads/".$test_parts[0]." && cd ..";
+		$compiler1="../resources/compilers/compile2 ../uploads/".$test_parts[0];
              	// TODO check error possibility
             	exec($compiler1);
 		$compiled=true;
@@ -167,7 +168,7 @@ if($uploadFileOk && $uploadTestOk){
     }
     else if($version ==3 ){
         if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="cd compilers && ./compile3 ../uploads/".$test_parts[0]." && cd ..";
+		$compiler1="../resources/compilers/compile3 ../uploads/".$test_parts[0];
              	// TODO check error possibility
             	exec($compiler1);
             	$compiled=true;
@@ -175,8 +176,8 @@ if($uploadFileOk && $uploadTestOk){
         ### ready for test
     }
     else if($version == 4){
-        if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="cd compilers && ./compile4 ../uploads/".$test_parts[0]." && cd ..";
+	    if($test_ext=="nj" || $test_ext=="asm"){
+		$compiler1="../resources/compilers/compile4 ../uploads/".$test_parts[0];
             	// TODO check error possibility
             	exec($compiler1);
             	$compiled=true;
@@ -185,7 +186,7 @@ if($uploadFileOk && $uploadTestOk){
     }
     else if($version == 5){
         if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="cd compilers && ./compile5 ../uploads/".$test_parts[0]." && cd ..";
+		$compiler1="../resources/compilers/compile5 ../uploads/".$test_parts[0];
             	// TODO check error possibility
             	exec($compiler1);
             	$compiled=true;
@@ -194,7 +195,7 @@ if($uploadFileOk && $uploadTestOk){
     }
     else if($version == 6){
         if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="cd compilers && ./compile6 ../uploads/".$test_parts[0]." && cd ..";
+		$compiler1="../resources/compilers/compile6 ../uploads/".$test_parts[0];
              	// TODO check error possibility
             	exec($compiler1);
             	$compiled=true;
@@ -203,7 +204,7 @@ if($uploadFileOk && $uploadTestOk){
     }
     else if($version == 7){
         if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="cd compilers && ./compile7 ../uploads/".$test_parts[0]." && cd ..";
+		$compiler1="../resources/compilers/compile7 ../uploads/".$test_parts[0];
              	// TODO check error possibility
             	exec($compiler1);
             	$compiled=true;
@@ -213,7 +214,7 @@ if($uploadFileOk && $uploadTestOk){
 
     else {
         if($test_ext=="nj" || $test_ext=="asm"){
-		$compiler1="cd compilers && ./compile8 ../uploads/".$test_parts[0]." && cd ..";
+		$compiler1="../resources/compilers/compile8 ../uploads/".$test_parts[0];
  		// TODO check error possibility
 		exec($compiler1);
 		$compiled=true;
@@ -221,12 +222,12 @@ if($uploadFileOk && $uploadTestOk){
     }
 
     if($compiled){
-        $own_cmd.="uploads/".$test_parts[0];
-        $ref_cmd.="../uploads/".$test_parts[0]." && cd ..";
+        $own_cmd.="../uploads/".$test_parts[0]." 2>/dev/null";
+        $ref_cmd.="../uploads/".$test_parts[0]." 2>/dev/null";
     }
     else {
-        $own_cmd.="uploads/".$test_name;
-        $ref_cmd.="../uploads/".$test_name." && cd ..,";
+        $own_cmd.="../uploads/".$test_name." 2>/dev/null";
+        $ref_cmd.="../uploads/".$test_name." 2>/dev/null";
     }
 }
 
@@ -251,10 +252,10 @@ while($i2<count($RefOutput)){
 }
 
 ## clean Steps
-#$rmv1_cmd="cd uploads && sh .file_remover && cd .. 2>/dev/null";
+$rmv1_cmd="cd ../uploads && sh .file_remover && cd - 2>/dev/null";
 $rmv2_cmd="rm ".$file_name." 2>/dev/null";
 
-#exec($rmv1_cmd);
+exec($rmv1_cmd);
 exec($rmv2_cmd);
 
 ##

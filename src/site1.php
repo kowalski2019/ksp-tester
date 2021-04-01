@@ -6,7 +6,7 @@
           <title>KSP Tester | Powered by @csmk</title>
           <!-- Latest compiled and minified CSS -->
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-          <link rel="shortcut icon" href="picture/icon3.jpeg" type="image/x-icon">
+          <link rel="shortcut icon" href="../resources/pictures/icon3.jpeg" type="image/x-icon">
 
   </head>
   <body>
@@ -39,8 +39,8 @@
   <legend>Tester Service</legend>
 
     <form action="upload.php" method="post" enctype="multipart/form-data">
-    
-  
+
+
 
       Select your Virtual-Machine to upload:
       <input type="file"  name="fileToUpload" id="fileToUpload" required/> e.g. : njvm (Your compiled machine)<br><br>

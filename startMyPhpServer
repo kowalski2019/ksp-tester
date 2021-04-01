@@ -1,3 +1,3 @@
 #!/bin/sh
 
-php -S localhost:4000 -t /home/csmk/Claude/OwnProjects/NinjaVM-Tester
+php -S localhost:4000 -t .

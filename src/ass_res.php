@@ -2,14 +2,14 @@
 <html>
 <head>
   <title>Assessment Result | Powered by @csmk</title>
-  <link rel="shortcut icon" href="picture/icon3.jpeg" type="image/x-icon">
+  <link rel="shortcut icon" href="../resources/pictures/icon3.jpeg" type="image/x-icon">
   <style>
     .flex-container {
       display: flex;
       flex-wrap: nowrap;
       background-color: black;
     }
-    
+
     .flex-container .box {
       background-color: #f1f1f1;
       width: 50%;
@@ -30,7 +30,7 @@
     </head>
     <body>
     <h1>Assessment Outputs</h1>
-    
+
     <div class="flex-container">
       <div class="box">
         <h2>The Ref-Virtual Machine output<h2>
@@ -45,7 +45,7 @@
           </div>
       </div>
     </div>
-    
+
     <p></p>
     <p><strong></strong></p>
 

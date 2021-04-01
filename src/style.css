@@ -1,7 +1,7 @@
 
 body
 {
-    background-image: url("picture/picture5.png");
+    background-image: url("../resources/pictures/picture5.png");
     max-width: 100%;
     height: auto;
 }
@@ -52,7 +52,7 @@ fieldset {
     background-color: transparent;
   }
 
-  
+
 input {
     margin: 5px;
   }
@@ -81,5 +81,3 @@ legend{
 .nav-link:hover{
     color: yellow;
 }
-
-

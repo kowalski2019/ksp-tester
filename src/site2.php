@@ -6,7 +6,7 @@
           <title>KSP certain-Tester</title>
           <!-- Latest compiled and minified CSS -->
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-          <link rel="shortcut icon" href="picture/icon3.jpeg" type="image/x-icon">
+          <link rel="shortcut icon" href="../resources/pictures/icon3.jpeg" type="image/x-icon">
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-custom">
@@ -34,27 +34,43 @@
           </div>
         </nav>
         <div class="container-fluid">
-    <h1>Tester Service</h1>
-    <form action="upload2.php" method="post" enctype="multipart/form-data">
+    <fieldset id="menu2">
+
+    <legend>Tester Service</legend>
+
+    <form action="upload1.php" method="post" enctype="multipart/form-data">
       Select your Virtual-Machine to upload:
       <input type="file" name="fileToUpload" id="fileToUpload" required/> e.g. : njvm (Your compiled machine)<br><br>
-      <label for="Version">Choose a version:</label>
-      <select name="version" id="version">
-      
-        <option value="2">2</option>
-        <option value="3">3</option> 
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
 
-      </select>
-      <br><br>
+      <label for="test"> Select a Ninja, ASM or Binary file to upload: </label>
+      <select name="test" id="test">
+            <?php
+                    $head='<option value="';
+                    $middle='">';
+                    $tail='</option>';
+                    $select_list='';
+                    $cmd_get_allTest='ls ../resources/bin_test_files';
+                    $version='2';
+                    $all_test=Array();
+                    $t_index=0;
+                    $i=2;
+                    $cmd_get_allTest1='ls ../resources/bin_test_files';
+                    exec($cmd_get_allTest1, $results, $ret);
+                    $j=0;
+                        while($j<count($results)){
+                            $select_list=$head.$results[$j].$middle.$results[$j].$tail.'\n';
+                            echo $select_list;
+                            $j += 1;
+                        }
+            ?>
+            </select>
+
+     e.g. : test.nj, test.asm or test.bin(test)<br><br>
       Give some default inputs if necessary:
       <input type="text" name="defaultInput" id="text"/>  e.g. : 12 3 34 ...<br><br><br>
-      <input type="submit" name="submit" id="button">
+      <input type="submit" name="submit" id="button"/>
     </form>
+    </fieldset>
     </div>
     <!-- jQuery library -->
                       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

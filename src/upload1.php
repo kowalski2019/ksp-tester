@@ -84,27 +84,30 @@ $version= substr($test_name, 1, 1);
 $pipe="|";
 $own_cmd=$echo_inputs.$pipe." "; //construction la commande pour executer la machine virtuelle du user
 
-$ref_cmd="cd resources && ";
+
+
+$ref_cmd_path="../resources/references/";
+$ref_cmd="";
 if($version == 2){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm2 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm2 ";
 }
 else if($version == 3){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm3 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm3 ";
 }
 else if($version == 4){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm4 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm4 ";
 }
 else if($version == 5){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm5 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm5 ";
 }
 else if($version == 6){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm6 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm6 ";
 }
 else if($version == 7){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm7 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm7 ";
 }
 else if($version == 8){
-	$ref_cmd.=$echo_inputs.$pipe." ./refnjvm8 ";
+	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm8 ";
 }
 
 $RefOutput="";
@@ -120,19 +123,9 @@ if($uploadFileOk){
 
     $own_cmd.="./";
     $own_cmd.=$file_name." ";
-  
 
-   $movetest_to_upload = "cp ./KSP_Test/$test_name  uploads/$test_name";
-   exec($movetest_to_upload);
-
-    if($compiled){
-        $own_cmd.="uploads/".$test_name;
-        $ref_cmd.="../uploads/".$test_name." && cd ..";
-    }
-    else {
-        $own_cmd.="./uploads/".$test_name;
-        $ref_cmd.="../uploads/".$test_name." && cd ..,";
-    }
+    $own_cmd.="../resources/bin_test_files/".$test_name;
+    $ref_cmd.="../resources/bin_test_files/".$test_name;
 }
 
 #echo "$own_cmd <br>";
@@ -156,10 +149,10 @@ while($i2<count($RefOutput)){
 }
 
 ## clean Steps
-$rmv1_cmd="cd uploads && sh .file_remover && cd .. 2>/dev/null";
+#$rmv1_cmd="cd uploads && sh .file_remover && cd .. 2>/dev/null";
 $rmv2_cmd="rm ".$file_name." 2>/dev/null";
 
-exec($rmv1_cmd);
+#exec($rmv1_cmd);
 exec($rmv2_cmd);
 
 ##
