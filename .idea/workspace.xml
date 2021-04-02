@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87fac2b9-3d57-45a3-8538-38a157c5afd7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/site1.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/site1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/site2.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/site2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/site3.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/site3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +38,17 @@
       <workItem from="1616359683721" duration="666000" />
       <workItem from="1616523698390" duration="14029000" />
       <workItem from="1617359993169" duration="634000" />
+      <workItem from="1617402316591" duration="3892000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="405" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617405287916">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="405" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1617405287916" />
   </component>
 </project>

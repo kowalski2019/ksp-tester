@@ -10,7 +10,7 @@
 
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg navbar-custom">
+  <nav class="navbar navbar-expand-lg navbar-custom" >
         <div class="container-fluid">
           <a class="navbar-brand" href="#"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
         </div>
         </div>
       </nav>
-      <div class="container-fluid">
+      <div class="container-fluid" id="site1Page">
   <fieldset id="menu2">
   <legend>Tester Service</legend>
 
@@ -61,7 +61,7 @@
       <input type="file" name="testFile" id="testFile" required/> e.g. : test.nj, test.asm or test.bin(test)<br><br>
       Give some default inputs if necessary:
       <input type="text" name="defaultInput" id="text"/>  e.g. : 12 3 34 ...<br><br><br>
-      <input type="submit" name="submit" id="button"/>
+      <input class="btn btn-success" type="submit" name="submit" id="button"/>
     </form>
   </fieldset>
   </div>

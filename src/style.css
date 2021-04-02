@@ -4,6 +4,7 @@ body
     background-image: url("../resources/pictures/picture5.png");
     max-width: 100%;
     height: auto;
+
 }
 form{
     color: #ffffff !important;
@@ -11,14 +12,27 @@ form{
 #welcomePage{
     background-color: #0f1a14;
     border: 1px solid black;
-    opacity: 0.6;
+    opacity:0.6;
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+}
+#site1Page,#site2Page,site3Page{
+    background-color: #0f1a14;
+    border: 3px solid black;
+    opacity:0.6;
     color: #ffffff;
     text-align: center;
     font-size: 20px;
+    padding: 10px;
+
 }
-h1{
-    padding:10px !important;
-}
+
+
+
+
+
 
 #menu2
 {
@@ -81,3 +95,5 @@ legend{
 .nav-link:hover{
     color: yellow;
 }
+
+
