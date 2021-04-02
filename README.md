@@ -7,7 +7,7 @@
 
 ## Start KSP-Tester localy without a docker container
 - just launch the bash script ' **startMyPhpServer** '
-- and join the homepage on : localhost:5000/src
+- and join the homepage on : localhost:4000/src/homepage.php
 
 ## Start KSP-Tester localy with a docker container
 - just launch the bash script **deployment**
