@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Assessment Result | Powered by @csmk</title>
-  <link rel="shortcut icon" href="../resources/pictures/icon3.jpeg" type="image/x-icon">
+  <link rel="shortcut icon" href="icon/icon3.jpeg" type="image/x-icon">
   <style>
     .flex-container {
       display: flex;
