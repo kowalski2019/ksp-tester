@@ -1,3 +1,6 @@
-.idea/
+.idea/**/workspace.xml
+.idea/**
+*.iml
+*.ipr
 *.class
 *.o
