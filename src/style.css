@@ -30,10 +30,6 @@ form{
 }
 
 
-
-
-
-
 #menu2
 {
     margin-left: 40px !important;
@@ -72,6 +68,12 @@ input {
   }
 legend{
     color:#ffffff !important;
+
+}
+h1,legend{
+    font-weight: bold !important;
+    font-size: 50px !important;
+    padding: 10px !important;
 }
 
 .navbar-brand {
@@ -95,5 +97,62 @@ legend{
 .nav-link:hover{
     color: yellow;
 }
+/* defines the animation */
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+.first,.second,.third,fourth{
+    opacity: 0;
+    -webkit-animation: fadeInUp 1s ease-in-out 0s forwards;
+    animation: fadeInUp 1s ease-in-out 0s forwards;
+    margin: 10px 0;
+    display: inline-block;
+    font-weight: 300;
+}
+.first {
+    -webkit-animation-delay: 1s;
+    animation-delay: 10ms;
+}
+.second {
+    -webkit-animation-delay: 3s;
+    animation-delay: 1s;
+}
+.third {
+    -webkit-animation-delay: 5s;
+    animation-delay: 3s;
+}
+.fourth {
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
+}
+.fifth {
+    -webkit-animation-delay: 9s;
+    animation-delay: 9s;
+}
+.sixth {
+    -webkit-animation-delay: 11s;
+    animation-delay: 11s;
+}
+/* now add general css for page */
 
+.emphasis {
+    font-style: italic;
+}
 
