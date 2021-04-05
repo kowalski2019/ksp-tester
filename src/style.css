@@ -4,21 +4,34 @@ body
     background-image: url("../resources/pictures/picture5.png");
     max-width: 100%;
     height: auto;
+
 }
 form{
     color: #ffffff !important;
 }
+h1{
+    color:#f1f1f1!important;
+}
 #welcomePage{
     background-color: #0f1a14;
     border: 1px solid black;
-    opacity: 0.6;
+    opacity:0.6;
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+}
+#site1Page,#site2Page,site3Page{
+    background-color: #0f1a14;
+    border: 3px solid black;
+    opacity:0.6;
     color: #ffffff;
     text-align: center;
     font-size: 20px;
+    padding: 10px;
+
 }
-h1{
-    padding:10px !important;
-}
+
 
 #menu2
 {
@@ -39,9 +52,9 @@ h1{
 
 }
 #fileToUpload, #version, #text, #testFile, #test{
-    height: 50px;
-    width: 300px;
-    font-size: xx-large;
+    height: 30px;
+    width: 100px;
+   border-radius: 5px;
 }
 #radio{
     height: 35px;
@@ -58,15 +71,21 @@ input {
   }
 legend{
     color:#ffffff !important;
+
+}
+h1,legend{
+    font-weight: bold !important;
+    font-size: 50px !important;
+    padding: 10px !important;
 }
 
 .navbar-brand {
-    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgZGF0YS1uYW1lPSJMYXllciAxIiBpZD0iTGF5ZXJfMSIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik01MDQuMzMsNDQ5Yy0xLjc3LTYuOC00NC43My0xNjcuNTItMTY0LjIxLTIzMi45MS00NC42NS0yNC40My05Ni4yLTQxLjQ1LTE0Ni01Ny45MUMxMTUsMTMyLjA4LDQwLjI5LDEwNy40MiwyNiw1OS42NWE2LjIyLDYuMjIsMCwwLDAtMTIsLjI0Yy0uOSwzLjUtMjEuNTMsODYuMzgsMTUuNjUsMTM3Ljk0LDE2LjgsMjMuMjksNDIuNjYsMzYuMzMsNzYuODUsMzguNzUsMi44OC4yLDUuNjEuNDIsOC40NC42Myw0LjE1LDE1LjE2LDIyLjE0LDYwLjYzLDg5LjYxLDY2LDEyLjI1LDEsMjQuMTcsMi4yNSwzNS45LDMuNjUsNC45MiwxNC4xNiwyNi44NCw1Ny42LDExNCw3My4wNyw2Mi43OCwxMS4xNCwxMTQsMzEuMTgsMTMxLjIxLDUxLjI1LDQuMzksMTIuNjgsNi41MywyMC42Miw2LjYzLDIxYTYuMiw2LjIsMCwwLDAsNiw0LjY1LDYuNTYsNi41NiwwLDAsMCwxLjU3LS4yQTYuMjMsNi4yMywwLDAsMCw1MDQuMzMsNDQ5Wk0zOS43NCwxOTAuNThDMTYsMTU3LjczLDE4Ljc1LDEwOC41MiwyMi41NSw4MS44M2MyNi4wNyw0MS40Myw5Mi4zNCw2My4zMSwxNjcuNjIsODguMTYsNDkuMzIsMTYuMjksMTAwLjMzLDMzLjEzLDE0NCw1NywzMS40NiwxNy4yMSw1Ny41Myw0MS44LDc4LjgsNjguNDRDMzcyLDI2OS4zOCwzMDUuNTgsMjM4LjIyLDEwNy4zNSwyMjQuMTgsNzcsMjIyLDU0LjI4LDIxMC43MywzOS43NCwxOTAuNThabTg4LjM2LDQ3LjY0YzIwMi4zOCwxNi40MiwyNTQuMzYsNTEuNDYsMjkyLjY0LDc3LjI4LDQuMzYsMi45NSw4LjU4LDUuOCwxMi44NCw4LjUxLDUuMDksNy43Nyw5LjgxLDE1LjU1LDE0LjE4LDIzLjIyLTM4LjM3LTE5Ljc4LTExNS42OS00MS40Mi0yMDEuMTktNTIuMTUtLjE0LDAtLjI5LDAtLjQ0LS4wNi0xMy4zOS0xLjY3LTI2Ljk0LTMuMTMtNDAuNjEtNC4yMkMxNTAuNDksMjg2LjQzLDEzMy4yMSwyNTMuNTMsMTI4LjEsMjM4LjIyWk0zNTYuNjMsMzY3LjY4Yy03MC44My0xMi41Ny05NC41MS00My43OS0xMDItNTkuMTEsMTEwLjI0LDE0Ljg3LDE5Mi43Nyw0Ni4yNywyMDUuNjEsNjIsNi43NSwxMy41NSwxMi4yOSwyNi4yNSwxNi44MSwzNy41QzQ1MS4xLDM5MS40OSw0MDcuOTQsMzc2Ljc4LDM1Ni42MywzNjcuNjhaIi8+PC9zdmc+");
-    background-position: center;
+    background-image: url("../resources/pictures/icon3.jpeg");
     background-repeat: no-repeat;
     background-size: contain;
-    width: 48px;
-    height: 48px;
+    width: 25px;
+    height: 25px;
+    border-radius: 10px;
 }
 
 .navbar-nav .nav-item:hover {
@@ -81,3 +100,85 @@ legend{
 .nav-link:hover{
     color: yellow;
 }
+/* defines the animation */
+@-webkit-keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+.first,.second,.third,fourth{
+    opacity: 0;
+    -webkit-animation: fadeInUp 1s ease-in-out 0s forwards;
+    animation: fadeInUp 1s ease-in-out 0s forwards;
+    margin: 10px 0;
+    display: inline-block;
+    font-weight: 300;
+}
+.first {
+    -webkit-animation-delay: 1s;
+    animation-delay: 10ms;
+}
+.second {
+    -webkit-animation-delay: 3s;
+    animation-delay: 50ms;
+}
+.third {
+    -webkit-animation-delay: 5s;
+    animation-delay: 70ms;
+}
+.fourth {
+    -webkit-animation-delay: 7s;
+    animation-delay: 7s;
+}
+.fifth {
+    -webkit-animation-delay: 9s;
+    animation-delay: 9s;
+}
+.sixth {
+    -webkit-animation-delay: 11s;
+    animation-delay: 11s;
+}
+/* now add general css for page */
+
+.emphasis {
+    font-style: italic;
+}
+.photo1{
+    background: url("https://www.publicdomainpictures.net/pictures/320000/velka/background-image.png") !important;
+}
+.photo2{
+    background: url("../resources/pictures/donald.jpg") !important;
+}
+.photo3{
+    background: url("../resources/pictures/stephSF.jpg") !important;
+}
+img{
+    height: 200px !important;
+    weight:200px!important;
+}
+#contact{
+
+}
+.mail{
+    color:#0d1712;
+}
+
+
+
+
+

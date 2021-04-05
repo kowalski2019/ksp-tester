@@ -23,9 +23,6 @@
               <a class="nav-link" href="homepage.php"> </i>Home</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="about.php">About</a>
-            </li>
-            <li class="nav-item ">
               <a class="nav-link" href="contact.php" >Contact</a>
             </li>
             <li class="nav-item ">
@@ -38,20 +35,21 @@
     <div class="container-fluid" id="welcomePage" >
         <form action="site.php" method="post" enctype="multipart/form-data">
 
-                <h1>Welcome to Ksp-tester</h1>
+                <h1 class="first">Welcome to <span class="emphasis">Ksp-tester</span></h1>
 
 
 
                 <fieldset id="menu">
-                    <legend>How can ksp-tester help you?</legend>
+                    <h2 class="second">How can ksp-tester help you?<h2>
 
-
-                    <input type="radio" name="choice" value="self-test" id="radio" /> <label for="self-test">Test your virtual machine with a self-written test</label><br />
-                    <input type="radio" name="choice" value="certain-test" id="radio" checked /> <label for="certain-test">Test certain functionality of your virtual machine</label><br />
+<div class="third">
+                    <input  type="radio" name="choice" value="self-test" id="radio" /> <label for="self-test">Test your virtual machine with a self-written test</label><br />
+                    <input  type="radio" name="choice" value="certain-test" id="radio" checked /> <label for="certain-test">Test certain functionality of your virtual machine</label><br />
                    <!--
                     <input type="radio" name="choice" value="auto-test" id="radio"  /> <label for="certain-test">Evaluate your ninja virtual machine</label><br />
                    -->
                    <input class="btn btn-success" type="submit" value="OK" name="ok" id="button"/>
+      </div>
 
                 </fieldset>
 

@@ -23,9 +23,6 @@
               <a class="nav-link" href="homepage.php"> </i>Home</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="about.php">About</a>
-            </li>
-            <li class="nav-item ">
               <a class="nav-link" href="contact.php" >Contact</a>
             </li>
             <li class="nav-item ">
@@ -37,6 +34,7 @@
     </nav>
     <div class="container-fluid" id="welcomePage" >
             <h1>Help</h1>
+            <h3>Click here to get help <a href="#"><button class="btn-success">Link To Tutorial</button></a></h3>
 
     </div>
 

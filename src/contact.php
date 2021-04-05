@@ -9,7 +9,7 @@
         <link rel="shortcut icon" href="../resources/pictures/icon3.jpeg" type="image/x-icon">
 
     </head>
-    <body>
+    <body id="contact">
     <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container-fluid">
         <a class="navbar-brand" href="#"></a>
@@ -22,9 +22,7 @@
             <li class="nav-item ">
               <a class="nav-link" href="homepage.php"> </i>Home</a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="about.php">About</a>
-            </li>
+
             <li class="nav-item ">
               <a class="nav-link" href="contact.php" >Contact</a>
             </li>
@@ -35,10 +33,61 @@
         </div>
       </div>
     </nav>
-    <div class="container-fluid" id="welcomePage" >
+    <div class="container" >
             <h1>Contact</h1>
+          <div class="row row-cols-1 row-cols-md-4 g-4" id="aboutUS">
+              <!--Claude Steph-->
+                <div class="col">
+                  <div class="card h-100 m-4">
+                    <img src="../resources/pictures/stephCMK.jpg" class="card-img-top m-4" alt="csmk" id="contributor0">
+                    <div class="card-body">
+                      <h5 class="card-title">Claude Stephane Manace Kouame</h5>
+                      <p class="card-text">Email-Adresse: <a  class="mail" href="mailto:claude.stephane.manace.kouame@mni.thm.de">claude.stephane.manace.kouame@mni.thm.de</a>
+                      </p>
+                    </div>
 
-    </div>
+                  </div>
+                </div>
+                <!--sofoste-->
+                <div class="col">
+                  <div class="card h-100 m-4">
+                    <img src="../resources/pictures/stephSF.jpg" class="card-img-top m-4" alt="sfs" id="contributor1">
+                    <div class="card-body">
+                      <h5 class="card-title">Stephane Sob Fouodji</h5>
+                      <p class="card-text">Email-Adresse: <a class="mail"  href="mailto:stephane.sob.fouodji@mni.thm.de">stephane.sob.fouodji@mni.thm.de</a>
+                      </p>
+                    </div>
+
+                  </div>
+                </div>
+                <!--Donald-->
+                <div class="col">
+                  <div class="card h-100 m-4">
+                    <img src="../resources/pictures/donald.jpg" class="card-img-top m-4" alt="ddf" id="contributor2">
+                    <div class="card-body">
+                      <h5 class="card-title">Donald Donchi Fofack</h5>
+                      <p class="card-text">Email-Adresse: <a class="mail" href="mailto:donald.donchi.fofack@mni.thm.de">donald.donchi.fofack@mni.thm.de</a>
+                                                                 </p>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col">
+                                  <div class="card h-100 m-4" >
+                                    <img src="../resources/pictures/carelle.jpeg" class="card-img-top m-4" alt="csmk" id="contributor0">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Carelle Djuffo Nzangue</h5>
+                                      <p class="card-text">Email-Adresse: <a  class="mail" href="mailto:donald.donchi.fofack@mni.thm.de">carelle.djuffo.nzangue@mni.thm.de</a>
+                                      </p>
+                                    </div>
+
+                                  </div>
+                                </div>
+
+              </div>
+
+
+          </div>
 
 
         <!-- jQuery library -->

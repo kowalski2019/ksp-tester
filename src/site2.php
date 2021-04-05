@@ -9,8 +9,8 @@
           <link rel="shortcut icon" href="../resources/pictures/icon3.jpeg" type="image/x-icon">
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg navbar-custom">
-          <div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-custom" >
+          <div class="container-fluid" >
             <a class="navbar-brand" href="#"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -20,9 +20,7 @@
             <li class="nav-item ">
               <a class="nav-link" href="homepage.php"> </i>Home</a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="about.php">About</a>
-            </li>
+
             <li class="nav-item ">
               <a class="nav-link" href="contact.php" >Contact</a>
             </li>
@@ -33,7 +31,7 @@
         </div>
           </div>
         </nav>
-        <div class="container-fluid">
+        <div class="container-fluid" id="site2Page">
     <fieldset id="menu2">
 
     <legend>Tester Service</legend>
@@ -68,7 +66,7 @@
      e.g. : test.nj, test.asm or test.bin(test)<br><br>
       Give some default inputs if necessary:
       <input type="text" name="defaultInput" id="text"/>  e.g. : 12 3 34 ...<br><br><br>
-      <input type="submit" name="submit" id="button"/>
+      <input class="btn btn-success" type="submit" name="submit" id="button"/>
     </form>
     </fieldset>
     </div>
