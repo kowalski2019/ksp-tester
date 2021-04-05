@@ -34,8 +34,7 @@
     </nav>
     <div class="container-fluid" id="welcomePage" >
             <h1>Help</h1>
-            <h3>Click here to get help <a href="#"><button class="btn-success">Link To Tutorial</button></a></h3>
-
+            <h3>Click here to get help <a href="https://youtu.be/1TlN-F-wXqI" target="_blank"><button class="btn-success">Link To Tutorial</button></a></h3>
     </div>
 
 
