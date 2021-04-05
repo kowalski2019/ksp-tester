@@ -21,7 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="87fac2b9-3d57-45a3-8538-38a157c5afd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assessment_result.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/assessment_result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assessment_result.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/assessment_result.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/help.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/help.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/homepage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/homepage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/site1.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/site1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/site2.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/site2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/site3.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/site3.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +47,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../hello-world" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -54,7 +61,8 @@
       <workItem from="1616359683721" duration="666000" />
       <workItem from="1616523698390" duration="14029000" />
       <workItem from="1617359993169" duration="634000" />
-      <workItem from="1617402316591" duration="7785000" />
+      <workItem from="1617402316591" duration="8182000" />
+      <workItem from="1617613885000" duration="10843000" />
     </task>
     <servers />
   </component>
@@ -71,11 +79,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="405" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617405287916">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="405" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1617405287916" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1617616223109">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1617616223109" />
   </component>
 </project>
