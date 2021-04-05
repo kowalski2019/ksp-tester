@@ -5,6 +5,14 @@
   <link rel="shortcut icon" href="../resources/pictures/icon3.jpeg" type="image/x-icon">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
+.navbar-brand {
+background-image: url("../resources/pictures/icon3.jpeg");
+background-repeat: no-repeat;
+background-size: contain;
+width: 25px;
+height: 25px;
+border-radius: 10px;
+}
     .flex-container {
       display: flex;
       flex-wrap: nowrap;
@@ -26,6 +34,18 @@
       line-height: 30px;
       font-size: 10px;
     }
+.navbar-nav .nav-item:hover {
+background-color: rgba(180, 190, 203, 0.4);
+}
+.navbar-custom{
+background-color: #0f1a14;
+}
+.nav-link{
+color: #f1f1f1;
+}
+.nav-link:hover{
+color: yellow;
+}
     </style>
 
     </head>
@@ -43,9 +63,6 @@
                   <a class="nav-link" href="homepage.php"> </i>Home</a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="about.php">About</a>
-                </li>
-                <li class="nav-item ">
                   <a class="nav-link" href="contact.php" >Contact</a>
                 </li>
                 <li class="nav-item ">
@@ -54,7 +71,9 @@
               </ul>
             </div>
           </div>
-        </nav>
+	</nav>
+
+     <h1><?php echo $test_result; ?></h1>
     <h1>Assessment Outputs</h1>
 
     <div class="flex-container">

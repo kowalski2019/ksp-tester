@@ -61,9 +61,7 @@
                             $j += 1;
                         }
             ?>
-            </select>
-
-     e.g. : test.nj, test.asm or test.bin(test)<br><br>
+            </select> e.g. : test.nj, test.asm or test.bin(test)<br><br>
       Give some default inputs if necessary:
       <input type="text" name="defaultInput" id="text"/>  e.g. : 12 3 34 ...<br><br><br>
       <input class="btn btn-success" type="submit" name="submit" id="button"/>

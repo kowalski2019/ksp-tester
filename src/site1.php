@@ -56,7 +56,7 @@
       </select>
       <br><br>
       Select a Ninja, ASM or Binary file to upload:
-      <input type="file" name="testFile" id="testFile" required/> e.g. : test.nj, test.asm or test.bin(test)<br><br>
+      <input type="file" name="testFile" id="testFile" required/>e.g. : test.nj, test.asm or test.bin(test)<br><br>
       Give some default inputs if necessary:
       <input type="text" name="defaultInput" id="text"/>  e.g. : 12 3 34 ...<br><br><br>
       <input class="btn btn-success" type="submit" name="submit" id="button"/>

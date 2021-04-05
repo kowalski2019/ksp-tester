@@ -260,10 +260,11 @@ exec($rmv2_cmd);
 
 ##
 
+
 if(strcmp($own_output,$ref_output)==0){
-    echo "<h1>Test passed</h1>";
+    $test_result="Test passed";
 }else{
-    echo "<h1>Test not passed</h1>";
+    $test_result="Test not passed";
 }
 
 include "assessment_result.php";
