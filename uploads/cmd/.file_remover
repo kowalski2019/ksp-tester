@@ -1,0 +1,10 @@
+#!/bin/sh
+
+export PATH=$PATH:`pwd`
+echo $PATH
+if [ "`current_dir`" == "cmd" ]; then
+	ls "../" | xargs rm 2>/dev/null
+	#echo "check"
+else
+	echo "files cannot remove"
+fi

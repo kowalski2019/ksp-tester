@@ -3,19 +3,22 @@
 ## copy steps
 
 echo -e "<?php \n echo '" > .begin
+echo -e "<?php \n" > .begin1
+echo -e "echo '" > .begin2
 echo -e "'; \n ?>" > .end
-
+#echo -e "'; \n" > .endI1
+#echo -e "?>" > .endI2
 sed  "s/<?php/';/g" src/site2.php | sed "s/?>/echo '/g" > .tmp2
 
 cat .begin src/site1.php .end > pagesForDocker/site1.php
 cat .begin .tmp2 .end > pagesForDocker/site2.php
 cat .begin src/site3.php .end > pagesForDocker/site3.php
-cat .begin src/homepage.php .end > pagesForDocker/index.php
+cat .begin1 src/customerCounter .begin2 src/homepage.php .end > pagesForDocker/index.php
 cat .begin src/about.php .end > pagesForDocker/about.php
 cat .begin src/contact.php .end > pagesForDocker/contact.php
 cat .begin src/help.php .end > pagesForDocker/help.php
 
-rm .begin .end .tmp2 2>/dev/null
+rm .begin .end .tmp2 .begin1 .begin2 2>/dev/null
 
 ## docker steps
 

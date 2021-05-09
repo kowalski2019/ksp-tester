@@ -1,0 +1,9 @@
+#!/bin/sh
+
+i=2
+while [ "`pwd | cut -d "/" -f $i `" != "" ]; do
+	i=`expr $i + 1`
+done
+
+i=`expr $i - 1`
+echo `pwd | cut -d "/" -f $i`

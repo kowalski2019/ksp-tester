@@ -1,5 +1,8 @@
 <?php 
- echo '
+
+$count_cmd = 'echo "KSP-Tester was visited at" `date` >> ../.visites';
+exec($count_cmd);
+echo '
 <!DOCTYPE html>
 <html>
     <head>

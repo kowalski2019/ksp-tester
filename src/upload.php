@@ -252,7 +252,7 @@ while($i2<count($RefOutput)){
 }
 
 ## clean Steps
-$rmv1_cmd="cd ../uploads && sh .file_remover && cd - 2>/dev/null";
+$rmv1_cmd="cd ../uploads/cmd && sh .file_remover && cd - 2>/dev/null";
 $rmv2_cmd="rm ".$file_name." 2>/dev/null";
 
 exec($rmv1_cmd);

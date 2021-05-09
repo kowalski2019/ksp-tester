@@ -45,7 +45,9 @@
                     <div class="card-body">
                       <h5 class="card-title">Claude Stephane Manace Kouame</h5>
                       <p class="card-text">Email-Adresse: <a  class="mail" href="mailto:claude.stephane.manace.kouame@mni.thm.de">claude.stephane.manace.kouame@mni.thm.de</a>
-                      </p>
+		      </p>
+			 <p class="card-text">Website: <a class="website" href="http://csmk59.de" target="_blank">
+                        csmk59.de</a></p>
                     </div>
 
                   </div>
@@ -56,9 +58,9 @@
                     <img src="../resources/pictures/stephSF.jpg" class="card-img-top m-4" alt="sfs" id="contributor1">
                     <div class="card-body">
                       <h5 class="card-title">Stephane Sob Fouodji</h5>
-                      <p class="card-text">Email-Adresse: <a class="mail"  href="mailto:stephane.sob.fouodji@mni.thm.de">stephane.sob.fouodji@mni.thm.de</a>
-                      </p>
-                    </div>
+		      <p class="card-text">Email-Adresse: <a class="mail"  href="mailto:stephane.sob.fouodji@mni.thm.de">stephane.sob.fouodji@mni.thm.de</a>
+		      </p>
+                 </div>
 
                   </div>
                 </div>
