@@ -73,7 +73,7 @@ color: yellow;
           </div>
 	</nav>
 
-     <h1><?php echo $test_result; ?></h1>
+     <?php echo $test_result; ?>
     <h1>Assessment Outputs</h1>
 
     <div class="flex-container">

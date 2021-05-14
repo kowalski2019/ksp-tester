@@ -262,9 +262,9 @@ exec($rmv2_cmd);
 
 
 if(strcmp($own_output,$ref_output)==0){
-    $test_result="Test passed";
+    $test_result="<h1 style=\"color:green;\">Test passed</h1>";
 }else{
-    $test_result="Test not passed";
+    $test_result="<h1 style=\"color:red;\">Test not passed</h1>";
 }
 
 include "assessment_result.php";

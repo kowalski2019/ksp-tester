@@ -74,11 +74,9 @@ color: yellow;
               </ul>
             </div>
           </div>
-	</nav>
-
-     <h1>';
+	</nav>';
 echo $test_result;
-	echo '</h1>
+	echo '
     <h1>Assessment Outputs</h1>
 
     <div class="flex-container">
