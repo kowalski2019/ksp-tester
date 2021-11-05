@@ -41,7 +41,7 @@
 
 
       Select your Virtual-Machine to upload:
-      <input type="file"  name="fileToUpload" id="fileToUpload" required/> e.g. : njvm (Your compiled machine)<br><br>
+      <input type="file"  name="fileToUpload" id="fileToUpload" required/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp e.g. : njvm (Your compiled machine)<br><br>
       <label for="Version">Choose a version:</label>
       <select name="version" id="version">
 
@@ -56,9 +56,24 @@
       </select>
       <br><br>
       Select a Ninja, ASM or Binary file to upload:
-      <input type="file" name="testFile" id="testFile" required/>e.g. : test.nj, test.asm or test.bin(test)<br><br>
+      <input type="file" name="testFile" id="testFile" required>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp e.g. : test.nj, test.asm or test.bin(test) </input> <br><br>
       Give some default inputs if necessary:
-      <input type="text" name="defaultInput" id="text"/>  e.g. : 12 3 34 ...<br><br><br>
+      <input type="text" name="defaultInput" id="text"/> e.g. : 12 3 34 ...<br><br>
+
+      <p>Test the functionality of your Garbage Collector (available only for the version 8)</p>
+      <input type="radio" id="gc1" name="gc" value="yes">
+      <label for="gc1">yes</label>&nbsp
+      <input type="radio" id="gc2" name="gc" value="no" checked>
+      <label for="gc2">no</label><br><br>
+<p>Fill in these fields below only if you have opted to test with the garbage collector !<br>
+ Attention! Please make sure that the stack size does not exceed the size of the heap. </p>
+      <input type ="text" name="s_size" style="width: 100px; height: 30px"> stack size</input> &nbsp&nbsp
+      <input type ="text" name="h_size" style="width: 100px; height: 30px"> heap size</input><br>
+      <input type="checkbox" id="gcstats" name="gc_opt[]" value="stats">
+      <label for="gcstats"> gcstats </label> &nbsp
+      <input type="checkbox" id="gcpurge" name="gc_opt[]" value="purge">
+      <label for="gcpurge"> gcpurge </label><br><br><br>
+
       <input class="btn btn-success" type="submit" name="submit" id="button"/>
     </form>
   </fieldset>

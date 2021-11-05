@@ -22,7 +22,7 @@ rm .begin .end .tmp2 .begin1 .begin2 2>/dev/null
 
 ## docker steps
 
-sudo docker run -d --rm -p 5000:80 --name ksp_server -v /var/www/html php:7.2-apache
+sudo docker run -d --rm -p 5000:80 --name ksp_server -v /var/www/html php:7.4-apache
 #sudo docker run -d --rm -p 5000:80 --name ksp_server -v /var/www/html php:7.2-apache
 
 [ ! -x "copyTotheDocker" ] && chmod a+x "copyTotheDocker"
