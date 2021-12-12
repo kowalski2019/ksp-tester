@@ -16,6 +16,8 @@ sudo docker cp src/style.css ksp_server:/var/www/html/src
 sudo docker cp src/upload.php ksp_server:/var/www/html/src
 sudo docker cp src/upload1.php ksp_server:/var/www/html/src
 sudo docker cp src/upload2.php ksp_server:/var/www/html/src
+sudo docker cp src/script.js ksp_server:/var/www/html/src
+sudo docker cp src/api.php ksp_server:/var/www/html/src
 
 sudo docker cp resources ksp_server:/var/www/html
 sudo docker cp uploads ksp_server:/var/www/html

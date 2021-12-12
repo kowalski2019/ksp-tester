@@ -8,6 +8,11 @@ $uploadFileOk = false;
 $uploadTestOk = false;
 
 /* functions */
+
+function log_info($str) {
+	echo "<script>console.log(".json_encode($str).") </script>";
+}
+
 function generate_name($name){
 	$result = "";
 	$tail = "";

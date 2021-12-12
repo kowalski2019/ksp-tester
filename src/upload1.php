@@ -8,6 +8,11 @@ $uploadFileOk = false;
 $uploadTestOk = false;
 
 /* functions */
+
+function log_info($str) {
+	echo "<script>console.log(".json_encode($str).") </script>";
+}
+
 function generate_name($name){
 	$result="";
 	$tail="";
@@ -66,6 +71,7 @@ function generate_name($name){
  }
 
 $test_name = $_POST["test"];
+
 
 $def_Inputs = $_POST["defaultInput"]; //recuperation des valeurs du default input
 
@@ -220,8 +226,8 @@ if($uploadFileOk){
 
 }
 
-#echo "$own_cmd <br>";
-#echo $ref_cmd;
+# log_info($own_cmd);
+#log_info($ref_cmd);
 
 exec($own_cmd, $OwnOutput, $ret1); //ret1 erreur, ownoutput pour les output
 exec($ref_cmd, $RefOutput, $ret2);

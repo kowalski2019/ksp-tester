@@ -65,15 +65,17 @@
       <label for="gc1">yes</label>&nbsp
       <input type="radio" id="gc2" name="gc" value="no" checked>
       <label for="gc2">no</label><br><br>
-<p>Fill in these fields below only if you have opted to test with the garbage collector !<br>
- Attention! Please make sure that the stack size does not exceed the size of the heap. </p>
-      <input type ="text" name="s_size" style="width: 100px; height: 30px"> stack size</input> &nbsp&nbsp
-      <input type ="text" name="h_size" style="width: 100px; height: 30px"> heap size</input><br>
-      <input type="checkbox" id="gcstats" name="gc_opt[]" value="stats">
-      <label for="gcstats"> gcstats </label> &nbsp
-      <input type="checkbox" id="gcpurge" name="gc_opt[]" value="purge">
-      <label for="gcpurge"> gcpurge </label><br><br><br>
+      <div id="gc_div">
 
+        <!-- <p>Fill in these fields below only if you have opted to test with the garbage collector !<br>-->
+        Attention! Please make sure that the stack size does not exceed the size of the heap. </p>
+        <input type ="text" name="s_size" style="width: 100px; height: 30px"> stack size</input> &nbsp&nbsp
+        <input type ="text" name="h_size" style="width: 100px; height: 30px"> heap size</input><br>
+        <input type="checkbox" id="gcstats" name="gc_opt[]" value="stats">
+        <label for="gcstats"> gcstats </label> &nbsp
+        <input type="checkbox" id="gcpurge" name="gc_opt[]" value="purge">
+        <label for="gcpurge"> gcpurge </label><br><br><br>
+      </div>
       <input class="btn btn-success" type="submit" name="submit" id="button"/>
     </form>
   </fieldset>
@@ -86,5 +88,7 @@
 
                   <!-- Latest compiled JavaScript -->
                   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                  <script src="script.js"></script>
+
   </body>
 </html>
