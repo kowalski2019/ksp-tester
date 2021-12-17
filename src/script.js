@@ -1,5 +1,27 @@
 
 /**
+*/
+function getLastTestName() {
+	try {
+
+		$.ajax({
+			type: "GET",  //type of method
+			url: "api.php",  //your page
+			data: {last_t: 'last_t'},
+			success: function (res) {
+				//console.log(res)
+				return res;
+			}
+		});
+
+	}
+	catch (e) {
+		console.log("Error in getLastTestName");
+		console.log(e);
+	}
+}
+
+/**
  * Makes a request to get names of versioned files and display them
  * @param {String} version The least version of the files
  */
@@ -10,19 +32,43 @@ function getFileNames(version) {
 			url: "api.php",  //your page
 			data: { version: version },// passing the values
 			success: function (res) {
-				let parse_res = JSON.parse(res);
+				//console.log(res);
+				//let parse_res = JSON.parse(res);
+				let last_res = [];
 				let test = $("#test");
-				test.empty(); // remove preview options in select
-				$.each(parse_res, function (index, value) {
-					test.append($('<option/>', {
-						value: value,
-						text: value
-					}));
+				$.ajax({
+					type: "GET",  //type of method
+					url: "api.php",  //your page
+					data: {last_t: 'last_t'},
+					success: function (last_t) {
+						console.log(last_t);
+						if(last_t !== null ) {
+							if (last_t[1] == version) {
+								last_res.push(last_t);
+							}
+						}
+						for ( i in res) {
+							if(res[i] != last_t) {
+								last_res.push(res[i]);
+							}
+						}
+						//console.log(last_res);
+						test.empty(); // remove preview options in select
+						$.each(last_res, function (index, value) {
+							test.append($('<option/>', {
+								value: value,
+								text: value
+							}));
+						});
+
+					}
 				});
+
 			}
 		});
 	}
 	catch (e) {
+		console.log("Error in getFilesNames")
 		console.log(e);
 	}
 }
@@ -55,16 +101,16 @@ function toggleGarbageCollection(checked, speed = 0) {
  * when the DOM finishes rendering
  */
 $(function () {
-	/* 
+	/*
 	######### variables ##########
 	*/
 	const version = $("#version");
 	const option = version.find(":selected");// the value of selected version.
 	const radio = $("input[name=gc]")
-	const checked = radio.filter(":checked") // the value of the checked radio button. 
-	const test = $("#test"); 
+	const checked = radio.filter(":checked") // the value of the checked radio button.
+	const test = $("#test");
 
-	
+
 	/**
 	 #### css ####
 	 */
@@ -72,7 +118,7 @@ $(function () {
 	test.css( "background-color", "#bbf" );
 
 	/*
-	######### Do when page loads ######### 
+	######### Do when page loads #########
 	*/
 	getFileNames(option.text());
 	toggleGarbageCollection(checked.val());
@@ -90,4 +136,3 @@ $(function () {
 		toggleGarbageCollection(checked, 500);
 	})
 });
-

@@ -10,6 +10,7 @@ sudo docker cp pagesForDocker/index.php ksp_server:/var/www/html/src
 sudo docker cp pagesForDocker/about.php ksp_server:/var/www/html/src
 sudo docker cp pagesForDocker/contact.php ksp_server:/var/www/html/src
 sudo docker cp pagesForDocker/help.php ksp_server:/var/www/html/src
+
 sudo docker cp src/homepage.php ksp_server:/var/www/html/src
 sudo docker cp src/ass_res.php ksp_server:/var/www/html/src/assessment_result.php
 sudo docker cp src/style.css ksp_server:/var/www/html/src

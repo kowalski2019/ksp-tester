@@ -72,6 +72,9 @@ function generate_name($name){
 
 $test_name = $_POST["test"];
 
+#save the name of the last test
+exec("echo $test_name > .last_test.l", $res_l, $err_l);
+
 
 $def_Inputs = $_POST["defaultInput"]; //recuperation des valeurs du default input
 
@@ -145,8 +148,8 @@ if(strlen($do_gc) != 0) {
 if(strlen($def_Inputs) == 0) {
 	$def_Inputs = "1 2 3 4 5 6 7 8";
 }
-$default_in=explode(" ",$def_Inputs); //split tableau des different input
-$echo_inputs="echo -n "; //effite le nextline
+$default_in=explode(" ",$def_Inputs);
+$echo_inputs="echo -n ";
 $i1=0;
 
 
@@ -226,7 +229,7 @@ if($uploadFileOk){
 
 }
 
-# log_info($own_cmd);
+#log_info($own_cmd);
 #log_info($ref_cmd);
 
 exec($own_cmd, $OwnOutput, $ret1); //ret1 erreur, ownoutput pour les output

@@ -1,6 +1,18 @@
-FROM php:7.2-apache
+FROM php:7.4-apache
+
+WORKDIR /var/www/html/src/
+
+CMD mkdir -p $WORKDIR
+CMD mkdir -p "/var/www/html/resources"
+CMD mkdir -p "/var/www/html/uploads"
+
+COPY pagesForDocker $WORKDIR
+COPY ["src/homepage.php", "src/style.css", "src/upload.php", "src/upload1.php", "src/upload2.php","src/script.js", "src/api.php", "/var/www/html/src/"]
+COPY resources /var/www/html/resources
+COPY uploads /var/www/html/uploads
+
+RUN chown -R www-data:www-data "/var/www/html/"
+RUN chmod -R 777 "/var/www/html/"
 
 EXPOSE 80
-
-
-CMD ["/usr/sbin/apache2ctl","-D","FOREGROUNG"]
+CMD ["apache2-foreground"]
