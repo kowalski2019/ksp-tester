@@ -11,6 +11,7 @@ COPY ["src/homepage.php", "src/style.css", "src/upload.php", "src/upload1.php", 
 COPY resources /var/www/html/resources
 COPY uploads /var/www/html/uploads
 
+RUN ln -s /var/www/html/resources /var/www/html/src/resources
 RUN chown -R www-data:www-data "/var/www/html/"
 RUN chmod -R 777 "/var/www/html/"
 
