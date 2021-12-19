@@ -1,26 +1,3 @@
-
-/**
-*/
-function getLastTestName() {
-	try {
-
-		$.ajax({
-			type: "GET",  //type of method
-			url: "api.php",  //your page
-			data: {last_t: 'last_t'},
-			success: function (res) {
-				//console.log(res)
-				return res;
-			}
-		});
-
-	}
-	catch (e) {
-		console.log("Error in getLastTestName");
-		console.log(e);
-	}
-}
-
 /**
  * Makes a request to get names of versioned files and display them
  * @param {String} version The least version of the files
@@ -90,9 +67,11 @@ function clearGcValues() {
 function toggleGarbageCollection(checked, speed = 0) {
 	let gc_div = $("#gc_div");
 	if (checked === 'yes') {
-		gc_div.animate({ opacity: 1 }, speed);
+		//gc_div.animate({ opacity: 1 }, speed);
+		gc_div.fadeIn(speed);
 	} else if (checked === 'no') {
-		gc_div.animate({ opacity: 0 }, speed);
+		//gc_div.animate({ opacity: 0 }, speed);
+		gc_div.fadeOut(speed);
 		clearGcValues();
 	}
 }
