@@ -37,13 +37,13 @@
     </nav>
     <div class="container" >
             <h1>Contact</h1>
-          <div class="row row-cols-1 row-cols-md-4 g-4" id="aboutUS">
+          <div class="row row-cols-1 row-cols-md-5 g-5" id="aboutUS">
               <!--Claude Steph-->
                 <div class="col">
-                  <div class="card h-100 m-4">
-                    <img src="../resources/pictures/stephCMK.jpg" class="card-img-top m-4" alt="csmk" id="contributor0">
+                  <div class="card h-100 m-2">
+                    <!-- <img src="../resources/pictures/stephCMK.jpg" class="card-img-top m-4" alt="csmk" id="contributor0">-->
                     <div class="card-body">
-                      <h5 class="card-title">Claude Stephane Manace Kouame</h5>
+                      <h5 class="card-title"><b>Claude Stephane Manace Kouame</b></h5>
                       <p class="card-text">Email-Adresse: <a  class="mail" href="mailto:claude.stephane.manace.kouame@mni.thm.de">claude.stephane.manace.kouame@mni.thm.de</a>
 		      </p>
 			 <p class="card-text">Website: <a class="website" href="http://csmk59.de" target="_blank">
@@ -51,13 +51,25 @@
                     </div>
 
                   </div>
+		</div>
+		<!--Bright baah -->
+                <div class="col">
+                  <div class="card h-100 m-2">
+                    <!-- <img src="../resources/pictures/" class="card-img-top m-4" alt="csmk" id="contributor0">-->
+                    <div class="card-body">
+                      <h5 class="card-title"><b>Bright Baah</b></h5>
+                      <p class="card-text">Email-Adresse: <a  class="mail" href="mailto:bright.baah@mni.thm.de">bright.baah@mni.thm.de</a>
+		      </p>
+                    </div>
+                  </div>
                 </div>
+
                 <!--sofoste-->
                 <div class="col">
-                  <div class="card h-100 m-4">
-                    <img src="../resources/pictures/stephSF.jpg" class="card-img-top m-4" alt="sfs" id="contributor1">
+                  <div class="card h-100 m-2">
+                   <!-- <img src="../resources/pictures/stephSF.jpg" class="card-img-top m-4" alt="sfs" id="contributor1">-->
                     <div class="card-body">
-                      <h5 class="card-title">Stephane Sob Fouodji</h5>
+                      <h5 class="card-title"><b>Stephane Sob Fouodji</b></h5>
 		      <p class="card-text">Email-Adresse: <a class="mail"  href="mailto:stephane.sob.fouodji@mni.thm.de">stephane.sob.fouodji@mni.thm.de</a>
 		      </p>
                  </div>
@@ -66,10 +78,10 @@
                 </div>
                 <!--Donald-->
                 <div class="col">
-                  <div class="card h-100 m-4">
-                    <img src="../resources/pictures/donald.jpg" class="card-img-top m-4" alt="ddf" id="contributor2">
+                  <div class="card h-100 m-2">
+                   <!-- <img src="../resources/pictures/donald.jpg" class="card-img-top m-4" alt="ddf" id="contributor2"> -->
                     <div class="card-body">
-                      <h5 class="card-title">Donald Donchi Fofack</h5>
+                      <h5 class="card-title"><b>Donald Donchi Fofack</b></h5>
                       <p class="card-text">Email-Adresse: <a class="mail" href="mailto:donald.donchi.fofack@mni.thm.de">donald.donchi.fofack@mni.thm.de</a>
                                                                  </p>
                     </div>
@@ -77,10 +89,10 @@
                   </div>
                 </div>
                 <div class="col">
-                                  <div class="card h-100 m-4" >
-                                    <img src="../resources/pictures/carelle.jpeg" class="card-img-top m-4" alt="csmk" id="contributor0">
-                                    <div class="card-body">
-                                      <h5 class="card-title">Carelle Djuffo Nzangue</h5>
+                  <div class="card h-100 m-2" >
+				    <!-- <img src="../resources/pictures/carelle.jpeg" class="card-img-top m-4" alt="csmk" id="contributor0"> -->
+                    <div class="card-body">
+                                      <h5 class="card-title"><b>Carelle Djuffo Nzangue</b></h5>
                                       <p class="card-text">Email-Adresse: <a  class="mail" href="mailto:donald.donchi.fofack@mni.thm.de">carelle.djuffo.nzangue@mni.thm.de</a>
                                       </p>
                                     </div>

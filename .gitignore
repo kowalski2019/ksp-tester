@@ -6,3 +6,5 @@ uploads
 *.class
 *.o
 *.xml
+.visites
+src/.last_test.l
