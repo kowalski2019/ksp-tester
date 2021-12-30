@@ -26,3 +26,12 @@ We can pass him the options:
 ### Build and run KSP-Tester localy in docker container
 - launch the bash script ' **./runner**'
 - and join the homepage on : localhost:5000/src
+
+### Pull container image and start the KSP-Tester
+ you just have to pull the image and run the command like the example below.
+ ```
+ sudo docker pull ghcr.io/kowalski2019/ksp_tester_img:latest
+ ```
+ ```
+ sudo docker run -d --restart=always -p 5000:80 --name ksp_server ghcr.io/kowalski2019/ksp_tester_img:latest 
+ ```
