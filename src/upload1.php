@@ -1,8 +1,7 @@
 <?php //begin
 
 /*static variables */
-$actualName="a";
-$file_name=""; //variable commence par &
+$file_name="";
 $test_name="";
 $uploadFileOk = false;
 $uploadTestOk = false;
@@ -13,44 +12,12 @@ function log_info($str) {
 	echo "<script>console.log(".json_encode($str).") </script>";
 }
 
-function generate_name($name){
-	$result="";
-	$tail="";
-	$test=0;
-	$i=0;
-	$n_size=strlen($name);
-	while($i<$n_size){
-		if($name[$i]=='z')
-			$test+=1;
-		$i+=1;
-	}
-
-	if($test==$n_size){
-		$i=0;
-		while($i<$test+1){
-			$result.="a";
-			$i+=1;
-		}
-	}
-	else {
-		$j=$n_size-1;
-		while($name[$j]=='z'){
-			$tail.="a";
-			$j-=1;
-		}
-		$result=substr($name,0,$j);
-		$result.=chr(ord($name[$j])+1).$tail;
-	}
-	return $result;
-}
-
-
  if(isset($_FILES["fileToUpload"])){//verification si un fichier est select
     $errors= array(); //tableau vide
     $file_name = $_FILES["fileToUpload"]["name"]; //function standart du fichier on recupere le nom
-    $tmp_ac_name=generate_name($actualName);
+    $tmp_ac_name=$_SERVER['REMOTE_ADDR'];
     $file_name.=$tmp_ac_name;
-    $actualName = $tmp_ac_name;
+    #$actualName = $tmp_ac_name;
     $file_size =$_FILES["fileToUpload"]["size"];//taille
     $file_tmp =$_FILES["fileToUpload"]["tmp_name"];//nom temporaire qui nous aide a deplacer notre fichier dans ntre server
     $file_type=$_FILES["fileToUpload"]["type"];//type
