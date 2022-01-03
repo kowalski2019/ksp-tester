@@ -7,4 +7,5 @@ uploads
 *.o
 *.xml
 .visites
-src/.last_test.l
+*.l
+

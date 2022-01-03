@@ -1,7 +1,6 @@
 <?php //begin
 
 /*global variables */
-$actualName = "a";
 $file_name = "";
 $test_name = "";
 $uploadFileOk = false;
@@ -13,50 +12,18 @@ function log_info($str) {
 	echo "<script>console.log(".json_encode($str).") </script>";
 }
 
-function generate_name($name){
-	$result = "";
-	$tail = "";
-	$test = 0;
-	$i = 0;
-	$n_size = strlen($name);
-	while($i < $n_size){
-		if($name[$i] == 'z')
-			$test += 1;
-		$i += 1;
-	}
-
-	if($test == $n_size){
-		$i = 0;
-		while($i < $test+1){
-			$result .= "a";
-			$i += 1;
-		}
-	}
-	else {
-		$j = $n_size - 1;
-		while($name[$j] == 'z'){
-			$tail .= "a";
-			$j -= 1;
-		}
-		$result = substr($name, 0, $j);
-		$result .= chr(ord($name[$j]) + 1).$tail;
-	}
-	return $result;
-}
-
-
  if(isset($_FILES["fileToUpload"])){ // check if a file was be selected
     $errors = array(); // empty array for erros
     $file_name = $_FILES["fileToUpload"]["name"]; // retrieving the njvm file name
-    $tmp_ac_name = generate_name($actualName);
+    $tmp_ac_name = $_SERVER['REMOTE_ADDR'];
     $file_name .= $tmp_ac_name;
-    $actualName = $tmp_ac_name;
-    $file_size = $_FILES["fileToUpload"]["size"];//taille
-    $file_tmp = $_FILES["fileToUpload"]["tmp_name"];//nom temporaire qui nous aide a deplacer notre fichier dans ntre server
-    $file_type = $_FILES["fileToUpload"]["type"];//type
-    $file_parts = explode(".", $file_name);//extension du fichier
-    $file_ext = strtolower(end($file_parts));//extention du fichier en Lowercase
-    $target_dir = "uploads"; //dossier ou tout les uploads atterir(fichier test)
+    #$actualName = $tmp_ac_name;
+    $file_size = $_FILES["fileToUpload"]["size"]; 
+    $file_tmp = $_FILES["fileToUpload"]["tmp_name"]; 
+    $file_type = $_FILES["fileToUpload"]["type"]; 
+    $file_parts = explode(".", $file_name); 
+    $file_ext = strtolower(end($file_parts));
+    $target_dir = "uploads"; // upload dir 
 
     if($file_size > 134217728){
         $errors[] = "File to large";
@@ -72,9 +39,9 @@ function generate_name($name){
 
  if(isset($_FILES["testFile"])){
     $errors1 = array();
-    $tmp_ac_name = generate_name($actualName);
+    $tmp_ac_name = $_SERVER['REMOTE_ADDR'];
     $test_name = $tmp_ac_name;
-    $actualName = $tmp_ac_name;
+    #$actualName = $tmp_ac_name;
     $test_name .= $_FILES["testFile"]["name"];
     $test_size = $_FILES["testFile"]["size"];
     $test_tmp = $_FILES["testFile"]["tmp_name"];
@@ -89,7 +56,8 @@ function generate_name($name){
     }
     if(in_array($test_ext, $extensions) === false){
         $errors1[]="extension not allowed, please choose a nj,asm or bin file.";
-     }
+	}
+
     if(empty($errors1) == true){
         move_uploaded_file($test_tmp, "$target_dir/$test_name");
         $uploadTestOk = true;
@@ -362,7 +330,7 @@ while($i2 < count($RefOutput)){
 }
 
 ## clean Steps
-$rmv1_cmd = "cd ../uploads/cmd && sh .file_remover && cd - 2>/dev/null";
+$rmv1_cmd = "cd ../uploads/cmd && /bin/sh .file_remover && cd - 2>/dev/null";
 $rmv2_cmd = "rm ".$file_name." 2>/dev/null";
 
 exec($rmv1_cmd);
