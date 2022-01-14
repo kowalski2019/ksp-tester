@@ -1,7 +1,7 @@
 # ksp-tester Powered by
 
 * Claude Stephane Manace Kouame
-* Donald Donchi FofackCancel Changes
+* Donald Donchi Fofack
 * Stephane Sob Fouodji
 * Bright Baah
 
