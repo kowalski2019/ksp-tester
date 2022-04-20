@@ -188,13 +188,17 @@ if($uploadFileOk){
 	    }
     }
 
-    $own_cmd .= "../resources/bin_test_files/".$test_name." 2>&1";
-    $ref_cmd .= "../resources/bin_test_files/".$test_name." 2>&1";
+    $own_cmd .= "../resources/bin_test_files/".$test_name;
+    $ref_cmd .= "../resources/bin_test_files/".$test_name;
+
+    $own_cmd = "timeout -k 9 20m " .$own_cmd . " 2>&1";
+    $ref_cmd = "timeout -k 9 20m " .$ref_cmd . " 2>&1";
 
     $own_cmd = "bash -c \"$own_cmd\"";
     $ref_cmd = "bash -c \"$ref_cmd\"";
 
 }
+
 
 #log_info($own_cmd);
 #log_info($ref_cmd);

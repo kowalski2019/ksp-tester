@@ -297,8 +297,8 @@ if($uploadFileOk && $uploadTestOk){
         $ref_cmd .= "../uploads/".$test_name;
     }
 
-    $own_cmd .= " 2>&1";
-    $ref_cmd .= " 2>&1";
+    $own_cmd = "timeout -k 9 20m " .$own_cmd . " 2>&1";
+    $ref_cmd = "timeout -k 9 20m " .$ref_cmd . " 2>&1";
 
     $own_cmd = "bash -c \"$own_cmd\"";
     $ref_cmd = "bash -c \"$ref_cmd\"";
@@ -306,8 +306,8 @@ if($uploadFileOk && $uploadTestOk){
 }
 
 # " 2>/dev/null";
-#echo "$own_cmd <br>";
-#echo $ref_cmd;
+#log_info($own_cmd);
+#log_info($ref_cmd);
 
 exec($own_cmd, $OwnOutput, $ret1); # ret1 to get some errors
 exec($ref_cmd, $RefOutput, $ret2);
