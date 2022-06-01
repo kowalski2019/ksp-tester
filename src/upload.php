@@ -271,10 +271,12 @@ if($uploadFileOk && $uploadTestOk){
 	}
     }
 
+$timeout_included = false;
     if ($gc && $version == 8) {
-	    $own_cmd = "$ulimit_cmd $own_cmd";
-	    $ref_cmd = "$ulimit_cmd $ref_cmd";
-
+	    $own_cmd = "$ulimit_cmd timeout -k 9 20m $own_cmd";
+	    $ref_cmd = "$ulimit_cmd timeout -k 9 20m $ref_cmd";
+	
+	$timeout_included = true;
 	    $own_cmd .= "--stack $stack_size --heap $heap_size ";
 	    $ref_cmd .= "--stack $stack_size --heap $heap_size ";
 	    if($gc_stats_opt) {
@@ -297,8 +299,13 @@ if($uploadFileOk && $uploadTestOk){
         $ref_cmd .= "../uploads/".$test_name;
     }
 
-    $own_cmd = "timeout -k 9 20m " .$own_cmd . " 2>&1";
-    $ref_cmd = "timeout -k 9 20m " .$ref_cmd . " 2>&1";
+	if (!$timeout_included) {
+		$own_cmd = "timeout -k 9 20m " .$own_cmd;
+		$ref_cmd = "timeout -k 9 20m " .$ref_cmd;
+	}
+	
+	$own_cmd .= " 2>&1";
+	$ref_cmd .= " 2>&1";
 
     $own_cmd = "bash -c \"$own_cmd\"";
     $ref_cmd = "bash -c \"$ref_cmd\"";

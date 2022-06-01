@@ -172,10 +172,12 @@ if($uploadFileOk){
     $own_cmd.="./";
     $own_cmd.=$file_name." ";
 
+    $timeout_included = false;
     if ($gc && $version == 8) {
-	    $own_cmd = "$ulimit_cmd $own_cmd";
-	    $ref_cmd = "$ulimit_cmd $ref_cmd";
+	    $own_cmd = "$ulimit_cmd timeout -k 9 20m $own_cmd";
+	    $ref_cmd = "$ulimit_cmd timeout -k 9 20m $ref_cmd";
 
+	    $timeout_included = true;
 	    $own_cmd .= "--stack $stack_size --heap $heap_size ";
 	    $ref_cmd .= "--stack $stack_size --heap $heap_size ";
 	    if($gc_stats_opt) {
@@ -191,8 +193,13 @@ if($uploadFileOk){
     $own_cmd .= "../resources/bin_test_files/".$test_name;
     $ref_cmd .= "../resources/bin_test_files/".$test_name;
 
-    $own_cmd = "timeout -k 9 20m " .$own_cmd . " 2>&1";
-    $ref_cmd = "timeout -k 9 20m " .$ref_cmd . " 2>&1";
+	if (!$timeout_included) {
+		$own_cmd = "timeout -k 9 20m " .$own_cmd;
+		$ref_cmd = "timeout -k 9 20m " .$ref_cmd;
+	}
+
+$own_cmd .= " 2>&1";
+$ref_cmd .= " 2>&1";
 
     $own_cmd = "bash -c \"$own_cmd\"";
     $ref_cmd = "bash -c \"$ref_cmd\"";
@@ -203,8 +210,10 @@ if($uploadFileOk){
 #log_info($own_cmd);
 #log_info($ref_cmd);
 
+
 exec($own_cmd, $OwnOutput, $ret1); //ret1 erreur, ownoutput pour les output
 exec($ref_cmd, $RefOutput, $ret2);
+
 
 #echo "$ret1 <br>";
 #echo "$re2";
