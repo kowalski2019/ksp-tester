@@ -138,17 +138,7 @@ if(strlen($def_Inputs) == 0) {
 	$def_Inputs = "1 2 3 4 5 6 7 8";
  }
 
-$default_in = explode(" ", $def_Inputs); //split tableau des different input
-$echo_inputs = "echo -n "; //effite le nextline
-$i1=0;
-
-#building echo command
-while($i1 < count($default_in)){
-    $echo_inputs .= $default_in[$i1];
-    $echo_inputs .= " ";
-    $i1++;
-}
-
+$echo_inputs = "echo -n " . $def_Inputs;
 
 ### build ulimit if gc_on
 

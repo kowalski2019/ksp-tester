@@ -115,18 +115,8 @@ if(strlen($do_gc) != 0) {
 if(strlen($def_Inputs) == 0) {
 	$def_Inputs = "1 2 3 4 5 6 7 8";
 }
-$default_in=explode(" ",$def_Inputs);
-$echo_inputs="echo -n ";
-$i1=0;
+$echo_inputs="echo -n " . $def_Inputs;
 
-
-#building echo command
-while($i1<count($default_in)){
-    $echo_inputs.=$default_in[$i1];
-    $echo_inputs.=" ";
-    $i1++;
-}
-### echo -n input1 input2 input3 ...
 
 $version= substr($test_name, 1, 1);
 $pipe="|";
