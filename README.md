@@ -1,7 +1,7 @@
 # ksp-tester Powered by
 
 * Claude Stephane Manace Kouame
-* Donald Donchi FofackCancel Changes
+* Donald Donchi Fofack
 * Stephane Sob Fouodji
 * Bright Baah
 
@@ -25,7 +25,7 @@ We can pass him the options:
 
 ### Build and run KSP-Tester localy in docker container
 - launch the bash script ' **./runner**'
-- and join the homepage on : localhost:5000/src
+- and join the homepage on localhost:5000/src
 
 ### Pull container image and start the KSP-Tester
  you just have to pull the image and run the command like the example below.

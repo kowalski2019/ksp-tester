@@ -3,6 +3,7 @@
 /*static variables */
 $file_name = "";
 $test_name = "";
+
 $uploadFileOk = false;
 $uploadTestOk = false;
 
@@ -37,7 +38,6 @@ if (isset($_FILES["fileToUpload"])) { // check if a file has been upload
 		print_r($errors);
 	}
 }
-
 $test_name = $_POST["test"];
 
 #save the name of the last test
@@ -116,7 +116,6 @@ if (strlen($def_Inputs) == 0) {
 
 $echo_inputs = "echo -n " . $def_Inputs;
 
-
 $version = substr($test_name, 1, 1);
 $pipe = " | ";
 $user_run_cmd = $echo_inputs . $pipe . "timeout -k 9 1m ";
@@ -168,14 +167,13 @@ if ($uploadFileOk) {
 	$ref_run_cmd = "bash -c \"$ref_run_cmd\"";
 }
 
-
-
 #log_info($user_run_cmd);
 #log_info($ref_run_cmd);
 
 
 exec($user_run_cmd, $userNJVMOutput, $ret1); //ret1 for output from stderr , userNJVMOutput for output from stdout
 exec($ref_run_cmd, $refNJVMOutput, $ret2);
+
 #echo "$ret1 <br>";
 #echo "$re2";
 
