@@ -113,33 +113,13 @@ if (strlen($do_gc) != 0) {
 if (strlen($def_Inputs) == 0) {
 	$def_Inputs = "1 2 3 4 5 6 7 8";
 }
-<<<<<<< Updated upstream
-$default_in=explode(" ",$def_Inputs);
-$echo_inputs="echo -n ";
-$i1=0;
 
-
-#building echo command
-while($i1<count($default_in)){
-    $echo_inputs.=$default_in[$i1];
-    $echo_inputs.=" ";
-    $i1++;
-}
-### echo -n input1 input2 input3 ...
-
-$version= substr($test_name, 1, 1);
-$pipe="|";
-$own_cmd=$echo_inputs.$pipe." "; //construction la commande pour executer la machine virtuelle du user
-=======
 $echo_inputs = "echo -n " . $def_Inputs;
 
 
 $version = substr($test_name, 1, 1);
 $pipe = " | ";
 $user_run_cmd = $echo_inputs . $pipe . "timeout -k 9 2m ";
->>>>>>> Stashed changes
-
-
 
 $ref_run_cmd_path = " ../resources/references/";                
 $ref_run_cmd = "";
@@ -150,40 +130,6 @@ $refNJVMOutput = "";
 $userNJVMOutput = "";
 $compiled = false;
 
-<<<<<<< Updated upstream
-$RefOutput="";
-$OwnOutput="";
-$compiled=false;
-
-if($uploadFileOk){
-    # make the uploaded file executable
-    $makeExc="chmod 755 ";
-    $makeExc.=$file_name;
-    exec($makeExc); //execute la comande coe sur le terminal
-    ###
-
-    $own_cmd.="./";
-    $own_cmd.=$file_name." ";
-
-    if ($gc && $version == 8) {
-	    $own_cmd = "$ulimit_cmd $own_cmd";
-	    $ref_cmd = "$ulimit_cmd $ref_cmd";
-
-	    $own_cmd .= "--stack $stack_size --heap $heap_size ";
-	    $ref_cmd .= "--stack $stack_size --heap $heap_size ";
-	    if($gc_stats_opt) {
-		$own_cmd .= "--gcstats ";
-		$ref_cmd .= "--gcstats ";
-	    }
-	    if($gc_purge_opt) {
-		$own_cmd .= "--gcpurge ";
-		$ref_cmd .= "--gcpurge ";
-	    }
-    }
-
-    $own_cmd .= "../resources/bin_test_files/".$test_name." 2>&1";
-    $ref_cmd .= "../resources/bin_test_files/".$test_name." 2>&1";
-=======
 if ($uploadFileOk) {
 	# make the uploaded file executable
 	$makeExc = "chmod 755 ";
@@ -214,7 +160,6 @@ if ($uploadFileOk) {
 
 	$user_run_cmd .= "../resources/bin_test_files/" . $test_name;
 	$ref_run_cmd .= "../resources/bin_test_files/" . $test_name;
->>>>>>> Stashed changes
 
 	$user_run_cmd .= " 2>&1";
 	$ref_run_cmd .= " 2>&1";
@@ -223,13 +168,7 @@ if ($uploadFileOk) {
 	$ref_run_cmd = "bash -c \"$ref_run_cmd\"";
 }
 
-<<<<<<< Updated upstream
-#log_info($own_cmd);
-#log_info($ref_cmd);
 
-exec($own_cmd, $OwnOutput, $ret1); //ret1 erreur, ownoutput pour les output
-exec($ref_cmd, $RefOutput, $ret2);
-=======
 
 #log_info($user_run_cmd);
 #log_info($ref_run_cmd);
@@ -237,8 +176,6 @@ exec($ref_cmd, $RefOutput, $ret2);
 
 exec($user_run_cmd, $userNJVMOutput, $ret1); //ret1 for output from stderr , userNJVMOutput for output from stdout
 exec($ref_run_cmd, $refNJVMOutput, $ret2);
->>>>>>> Stashed changes
-
 #echo "$ret1 <br>";
 #echo "$re2";
 
