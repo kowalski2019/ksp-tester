@@ -8,63 +8,74 @@ $uploadTestOk = false;
 
 /* functions */
 
-function log_info($str) {
-	echo "<script>console.log(".json_encode($str).") </script>";
+function log_info($str)
+{
+	echo "<script>console.log(" . json_encode($str) . ") </script>";
 }
 
- if(isset($_FILES["fileToUpload"])){ // check if a file was be selected
-    $errors = array(); // empty array for erros
-    $file_name = $_FILES["fileToUpload"]["name"]; // retrieving the njvm file name
-    $tmp_ac_name = $_SERVER['REMOTE_ADDR'];
-    $file_name .= $tmp_ac_name;
-    #$actualName = $tmp_ac_name;
-    $file_size = $_FILES["fileToUpload"]["size"]; 
-    $file_tmp = $_FILES["fileToUpload"]["tmp_name"]; 
-    $file_type = $_FILES["fileToUpload"]["type"]; 
-    $file_parts = explode(".", $file_name); 
-    $file_ext = strtolower(end($file_parts));
-    $target_dir = "uploads"; // upload dir 
+if (isset($_FILES["fileToUpload"])) { // check if a file has been upload
+	$errors = array(); // empty array for errors
+	$file_name = $_FILES["fileToUpload"]["name"]; // retrieving the njvm file name
+	$tmp_ac_name = $_SERVER['REMOTE_ADDR'];
+	$file_name .= $tmp_ac_name;
+	#$actualName = $tmp_ac_name;
+	$file_size = $_FILES["fileToUpload"]["size"];
+	$file_tmp = $_FILES["fileToUpload"]["tmp_name"];
+	$file_type = $_FILES["fileToUpload"]["type"];
+	$file_parts = explode(".", $file_name);
+	$file_ext = strtolower(end($file_parts));
+	$target_dir = "uploads"; // upload dir 
 
-    if($file_size > 134217728){
-        $errors[] = "File to large";
-    }
-    if(empty($errors) == true){//si errors est vide il n y a pas d erreur
-        move_uploaded_file($file_tmp, "$file_name");//deplace le fichier upload dans le server
-        $uploadFileOk = true;
-     }else{
-        echo "Somethings went wrong";
-        print_r($errors);
-     }
- }
+	if ($file_size > 134217728) {
+		$errors[] = "File to large";
+	}
+	if (empty($errors) == true) {
+		move_uploaded_file($file_tmp, "$file_name");
+		$uploadFileOk = true;
+	} else {
+		echo "Somethings went wrong";
+		print_r($errors);
+	}
+}
 
- if(isset($_FILES["testFile"])){
-    $errors1 = array();
-    $tmp_ac_name = $_SERVER['REMOTE_ADDR'];
-    $test_name = $tmp_ac_name;
-    #$actualName = $tmp_ac_name;
-    $test_name .= $_FILES["testFile"]["name"];
-    $test_size = $_FILES["testFile"]["size"];
-    $test_tmp = $_FILES["testFile"]["tmp_name"];
-    $test_type = $_FILES["testFile"]["type"];
-    $test_parts = explode(".", $test_name);
-    $test_ext = strtolower(end($test_parts));
-    $target_dir = "../uploads";
-    $extensions = array("nj", "asm", "bin", "");
+function rebuild_test_file_name($test_file_name_as_array, $ext){
+	$res = "";
+	foreach ($test_file_name_as_array as $item) {
+		if ($item != $ext) {
+			$res .= $item . ".";
+		}
+	}
+	return substr($res, 0, - 1);
+}
 
-    if($test_size > 134217728){
-        $errors1[] = "Test file to large";
-    }
-    if(in_array($test_ext, $extensions) === false){
-        $errors1[]="extension not allowed, please choose a nj,asm or bin file.";
+if (isset($_FILES["testFile"])) {
+	$errors1 = array();
+	$tmp_ac_name = $_SERVER['REMOTE_ADDR'];
+	$test_name = $tmp_ac_name . "_";
+	#$actualName = $tmp_ac_name;
+	$test_name .= $_FILES["testFile"]["name"];
+	$test_size = $_FILES["testFile"]["size"];
+	$test_tmp = $_FILES["testFile"]["tmp_name"];
+	$test_type = $_FILES["testFile"]["type"];
+	$test_parts = explode(".", $test_name);
+	$test_ext = strtolower(end($test_parts));
+	$target_dir = "../uploads";
+	$extensions = array("nj", "asm", "bin", "");
+
+	if ($test_size > 134217728) {
+		$errors1[] = "Test file to large";
+	}
+	if (in_array($test_ext, $extensions) === false) {
+		$errors1[] = "extension not allowed, please choose a nj,asm or bin file.";
 	}
 
-    if(empty($errors1) == true){
-        move_uploaded_file($test_tmp, "$target_dir/$test_name");
-        $uploadTestOk = true;
-     }else{
-        print_r($errors1);
-     }
- }
+	if (empty($errors1) == true) {
+		move_uploaded_file($test_tmp, "$target_dir/$test_name");
+		$uploadTestOk = true;
+	} else {
+		print_r($errors1);
+	}
+}
 
 $def_Inputs = $_POST["defaultInput"]; // retrieve the defaulft inputs
 
@@ -77,7 +88,7 @@ $gc_purge_opt = false;
 if (isset($_POST["gc_opt"])) {
 	$gc_opt = $_POST["gc_opt"];  # index 0 for gcstats and 1 for gcpurge
 
-	if(count($gc_opt) == 2) {
+	if (count($gc_opt) == 2) {
 		$gc_stats_opt = true;
 		$gc_purge_opt = true;
 	} else {
@@ -98,27 +109,26 @@ $heap_default_size = 8192;
 $ulimit_cmd = "ulimit -SHd ";
 
 $ulimit_val = 9000;
-if(strlen($do_gc) != 0) {
+if (strlen($do_gc) != 0) {
 	if (strcmp($do_gc, "yes") == 0)
 		$gc = true;
 
-	if(strlen($stack_size) == 0)
+	if (strlen($stack_size) == 0)
 		$stack_size = 64;
-	if(strlen($heap_size) == 0){
+	if (strlen($heap_size) == 0) {
 		$heap_size = $heap_default_size;
-	}
-	else{
+	} else {
 		$heap_size = intval($heap_size);
 		# 1.12 if < 10 000
 		# 1.04 if < 100 000
 		# 1.08 if < 1 000 000
 		if ($heap_size < 100)
 			$ulimit_val = 2000;
-		else if($heap_size >= 100 && $heap_size <= 1000)
+		else if ($heap_size >= 100 && $heap_size <= 1000)
 			$ulimit_val = 5000;
 		else if ($heap_size >= 1000 && $heap_size <= 10000)
 			$ulimit_val = intval($heap_size * 1.14);
-		else if(($heap_size >= 10000) && ($heap_size <= 100000))
+		else if (($heap_size >= 10000) && ($heap_size <= 100000))
 			$ulimit_val = intval($heap_size * 1.04);
 		else
 			$ulimit_val = intval($heap_size * 1.8);
@@ -130,205 +140,114 @@ if(strlen($do_gc) != 0) {
 		$ulimit_val += $stack_size;
 	 */
 	$ulimit_cmd .= " $ulimit_val 2>&1 && ";
-
 }
 
 #echo $ulimit_cmd;
-if(strlen($def_Inputs) == 0) {
+if (strlen($def_Inputs) == 0) {
 	$def_Inputs = "1 2 3 4 5 6 7 8";
- }
+}
 
 $echo_inputs = "echo -n " . $def_Inputs;
-
-### build ulimit if gc_on
 
 
 ### echo -n input1 input2 input3 ...
 $version = $_POST["version"];
-$pipe = "|";
+$pipe = " | ";
 
-$own_cmd = $echo_inputs.$pipe." ";  # build the echo cmd and the pipe
+$user_run_cmd = $echo_inputs . $pipe . "timeout -k 9 1m ";  # build the echo cmd and the pipe
 
-$ref_cmd_path = " ../resources/references/";
-$ref_cmd = "";
-if($version == 2){
-	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm2 ";
-}
-else if($version == 3){
-	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm3 ";
-}
-else if($version == 4){
-	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm4 ";
-}
-else if($version == 5){
-	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm5 ";
-}
-else if($version == 6){
-	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm6 ";
-}
-else if($version == 7){
-	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm7 ";
-}
-else if($version == 8){
-	$ref_cmd = $echo_inputs.$pipe.$ref_cmd_path."refnjvm8 ";
-}
+$ref_run_cmd_path = " ../resources/references/";
+$ref_run_cmd = "";
 
-/*
-if($version<=4){
-    $ref_cmd=$echo_inputs.$pipe." ./refnjvm4 "; //. pour concatener les strings
-}else $ref_cmd=$echo_inputs.$pipe." ./refnjvm8 ";
-
-*/
+$ref_run_cmd = $echo_inputs . $pipe . "timeout -k 9 1m" . $ref_run_cmd_path . "refnjvm". $version . " ";
 
 
-$RefOutput = "";
-$OwnOutput = "";
+$refNJVMOutput = "";
+$userNJVMOutput = "";
 $compiled = false;
 
 
-if($uploadFileOk && $uploadTestOk){
-    # make the uploaded file executable
-    $makeExc = "chmod 755 ";
-    $makeExc .= $file_name;
-    exec($makeExc);
-    ###
+if ($uploadFileOk && $uploadTestOk) {
+	# make the uploaded njvm file executable
+	$makeExc = "chmod 755 ";
+	$makeExc .= $file_name;
+	exec($makeExc);
+	###
 
-    $own_cmd .= "./";
-    $own_cmd .= $file_name." ";
+	$user_run_cmd .= "./";
+	$user_run_cmd .= $file_name . " ";
 
-
-    if($version == 2){
-        if($test_ext == "nj" || $test_ext == "asm"){
-		$compiler1 = "../resources/compilers/compile2 ../uploads/".$test_parts[0];
-             	// TODO check error possibility
-            	exec($compiler1);
-		$compiled = true;
-        }
-        ### ready for test
-    }
-    else if($version == 3 ){
-        if($test_ext == "nj" || $test_ext == "asm"){
-		$compiler1 = "../resources/compilers/compile3 ../uploads/".$test_parts[0];
-             	// TODO check error possibility
-            	exec($compiler1);
-            	$compiled = true;
-        }
-        ### ready for test
-    }
-    else if($version == 4){
-	    if($test_ext == "nj" || $test_ext == "asm"){
-		$compiler1 = "../resources/compilers/compile4 ../uploads/".$test_parts[0];
-            	// TODO check error possibility
-            	exec($compiler1);
-            	$compiled = true;
-        }
-        ### ready for test
-    }
-    else if($version == 5){
-        if($test_ext == "nj" || $test_ext == "asm"){
-		$compiler1 = "../resources/compilers/compile5 ../uploads/".$test_parts[0];
-            	// TODO check error possibility
-            	exec($compiler1);
-            	$compiled = true;
-	}
-        ### ready for test
-    }
-    else if($version == 6){
-        if($test_ext == "nj" || $test_ext == "asm"){
-		$compiler1 = "../resources/compilers/compile6 ../uploads/".$test_parts[0];
-             	// TODO check error possibility
-            	exec($compiler1);
-            	$compiled = true;
-	}
-        ### ready for test
-    }
-    else if($version == 7){
-        if($test_ext == "nj" || $test_ext == "asm"){
-		$compiler1 = "../resources/compilers/compile7 ../uploads/".$test_parts[0];
-             	// TODO check error possibility
-            	exec($compiler1);
-            	$compiled = true;
-       	}
-        ### ready for test
-    }
-
-    else {
-        if($test_ext == "nj" || $test_ext == "asm"){
-		$compiler1 = "../resources/compilers/compile8 ../uploads/".$test_parts[0];
- 		// TODO check error possibility
+	$test_file_name = rebuild_test_file_name($test_parts, $test_ext);
+	//log_info($test_file_name);
+	if ($test_ext == "nj" || $test_ext == "asm") {
+		$compiler1 = "../resources/compilers/compile" . "$version ../uploads/" . $test_file_name;
+		// TODO check error possibility
 		exec($compiler1);
 		$compiled = true;
 	}
-    }
 
-$timeout_included = false;
-    if ($gc && $version == 8) {
-	    $own_cmd = "$ulimit_cmd timeout -k 9 20m $own_cmd";
-	    $ref_cmd = "$ulimit_cmd timeout -k 9 20m $ref_cmd";
-	
-	$timeout_included = true;
-	    $own_cmd .= "--stack $stack_size --heap $heap_size ";
-	    $ref_cmd .= "--stack $stack_size --heap $heap_size ";
-	    if($gc_stats_opt) {
-		$own_cmd .= "--gcstats ";
-		$ref_cmd .= "--gcstats ";
-	    }
-	    if($gc_purge_opt) {
-		$own_cmd .= "--gcpurge ";
-		$ref_cmd .= "--gcpurge ";
-	    }
-    }
+	$timeout_included = false;
+	if ($gc && ($version == 8)) {
+		$user_run_cmd = "$ulimit_cmd $user_run_cmd";
+		$ref_run_cmd = "$ulimit_cmd $ref_run_cmd";
 
-    if($compiled){
-        $own_cmd .= "../uploads/".$test_parts[0];
-        $ref_cmd .= "../uploads/".$test_parts[0];
-    }
-    else {
-	# we can direct excute the file
-        $own_cmd .= "../uploads/".$test_name;
-        $ref_cmd .= "../uploads/".$test_name;
-    }
-
-	if (!$timeout_included) {
-		$own_cmd = "timeout -k 9 20m " .$own_cmd;
-		$ref_cmd = "timeout -k 9 20m " .$ref_cmd;
+		$timeout_included = true;
+		$user_run_cmd .= "--stack $stack_size --heap $heap_size ";
+		$ref_run_cmd .= "--stack $stack_size --heap $heap_size ";
+		if ($gc_stats_opt) {
+			$user_run_cmd .= "--gcstats ";
+			$ref_run_cmd .= "--gcstats ";
+		}
+		if ($gc_purge_opt) {
+			$user_run_cmd .= "--gcpurge ";
+			$ref_run_cmd .= "--gcpurge ";
+		}
 	}
-	
-	$own_cmd .= " 2>&1";
-	$ref_cmd .= " 2>&1";
 
-    $own_cmd = "bash -c \"$own_cmd\"";
-    $ref_cmd = "bash -c \"$ref_cmd\"";
+	if ($compiled) {
+		$user_run_cmd .= "../uploads/" . $test_file_name;
+		$ref_run_cmd .= "../uploads/" . $test_file_name;
+	} else {
+		# we can direct excute the file
+		$user_run_cmd .= "../uploads/" . $test_name;
+		$ref_run_cmd .= "../uploads/" . $test_name;
+	}
 
+	$user_run_cmd .= " 2>&1";
+	$ref_run_cmd .= " 2>&1";
+
+	$user_run_cmd = "bash -c \"$user_run_cmd\"";
+	$ref_run_cmd = "bash -c \"$ref_run_cmd\"";
 }
 
 # " 2>/dev/null";
-#log_info($own_cmd);
-#log_info($ref_cmd);
+#log_info($user_run_cmd);
+#log_info($ref_run_cmd);
 
-exec($own_cmd, $OwnOutput, $ret1); # ret1 to get some errors
-exec($ref_cmd, $RefOutput, $ret2);
+exec($user_run_cmd, $userNJVMOutput, $ret1); # ret1 to get some errors
+exec($ref_run_cmd, $refNJVMOutput, $ret2);
 
 #echo "$ret1 <br>";
 #echo "$re2";
 
-$own_output = ""; # to build the user njvm outputs
-$ref_output = ""; # to build the ref njvm outputs
+$user_njvm_output = ""; # to build the user njvm outputs
+$ref_njvm_output = ""; # to build the ref njvm outputs
 
 $i2 = 0;
-while($i2 < count($OwnOutput)){
-    $own_output .= nl2br($OwnOutput[$i2]."\n");
+while ($i2 < count($userNJVMOutput)) {
+	$user_njvm_output .= nl2br($userNJVMOutput[$i2] . "\n");
 	$i2++;
 }
 $i2 = 0;
-while($i2 < count($RefOutput)){
-    $ref_output .= nl2br($RefOutput[$i2]."\n");
+while ($i2 < count($refNJVMOutput)) {
+	$ref_njvm_output .= nl2br($refNJVMOutput[$i2] . "\n");
 	$i2++;
 }
 
 ## clean Steps
 $rmv1_cmd = "cd ../uploads/cmd && /bin/sh .file_remover && cd - 2>/dev/null";
-$rmv2_cmd = "rm ".$file_name." 2>/dev/null";
+$rmv2_cmd = "rm " . $file_name . " 2>/dev/null";
+
 
 exec($rmv1_cmd);
 exec($rmv2_cmd);
@@ -336,13 +255,10 @@ exec($rmv2_cmd);
 ##
 
 
-if(strcmp($own_output,$ref_output) == 0){
-    $test_result = "<h1 style=\"color:green;\">Test passed</h1>";
-}else{
-    $test_result = "<h1 style=\"color:red;\">Test not passed</h1>";
+if (strcmp($user_njvm_output, $ref_njvm_output) == 0) {
+	$test_result = "<h1 style=\"color:green;\">Test passed</h1>";
+} else {
+	$test_result = "<h1 style=\"color:red;\">Test not passed</h1>";
 }
 
 include "assessment_result.php";
-
-
-?>

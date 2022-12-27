@@ -6,7 +6,7 @@
 * Bright Baah
 
 ## Start KSP-Tester localy without a docker container
-- launch the bash script ' **./startMyPhpServer** '
+- run the bash script ' **./startMyPhpServer** '
 - and join the homepage on : localhost:4000/src/homepage.php
 
 ## About the Shell script ' runner '
@@ -18,10 +18,10 @@ We can pass him the options:
 - no argument: create the image and start the docker container automatically
 
 ### Build the KSP-Tester docker-image
-- launch the bash script ' **./runner build** '
+- run the bash script ' **./runner build** '
 
 ### Run the KSP-Tester in a docker container
-- launch the bash script ' **./runner start** '
+- run the bash script ' **./runner start** '
 
 ### Build and run KSP-Tester localy in docker container
 - launch the bash script ' **./runner**'
@@ -33,5 +33,5 @@ We can pass him the options:
  sudo docker pull ghcr.io/kowalski2019/ksp_tester_img:latest
  ```
  ```
- sudo docker run -d --restart=always -p 5000:80 --name ksp_server ghcr.io/kowalski2019/ksp_tester_img:latest 
+ sudo docker run -d --restart=always -p 127.0.0.1:5000:80 --name ksp_server ghcr.io/kowalski2019/ksp_tester_img:latest 
  ```
