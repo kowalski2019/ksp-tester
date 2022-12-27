@@ -84,7 +84,7 @@ echo $test_result;
         <h2>The Ref-Virtual Machine output<h2>
         <div class="boxIn">
 	<p>';
-	echo $ref_output;
+	echo $ref_njvm_output;
 	echo '</p>
         </div>
       </div>
@@ -92,7 +92,7 @@ echo $test_result;
         <h2>Your Virtual Machine output<h2>
           <div class="boxIn">
 	      <p>';
-	echo $own_output;
+	echo $user_njvm_output;
 	echo '</p>
           </div>
       </div>
