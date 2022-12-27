@@ -80,13 +80,13 @@ color: yellow;
       <div class="box">
         <h2>The Ref-Virtual Machine output<h2>
         <div class="boxIn">
-        <p><?php echo $ref_output; ?></p>
+        <p><?php echo $ref_njvm_output; ?></p>
         </div>
       </div>
       <div class="box">
         <h2>Your Virtual Machine output<h2>
           <div class="boxIn">
-              <p><?php echo $own_output; ?></p>
+              <p><?php echo $user_njvm_output; ?></p>
           </div>
       </div>
     </div>

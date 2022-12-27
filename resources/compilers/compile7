@@ -10,3 +10,4 @@ elif [ -e "$1.nj" ]; then
 else
 	echo "nothing to do"
 fi
+
