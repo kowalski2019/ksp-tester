@@ -147,31 +147,19 @@ if (strlen($def_Inputs) == 0) {
 	$def_Inputs = "1 2 3 4 5 6 7 8";
 }
 
-$default_in = explode(" ", $def_Inputs); //split tableau des different input
-$echo_inputs = "echo -n "; //effite le nextline
-$i1=0;
-
-#building echo command
-while($i1 < count($default_in)){
-    $echo_inputs .= $default_in[$i1];
-    $echo_inputs .= " ";
-    $i1++;
-}
-
-
-### build ulimit if gc_on
+$echo_inputs = "echo -n " . $def_Inputs;
 
 
 ### echo -n input1 input2 input3 ...
 $version = $_POST["version"];
 $pipe = " | ";
 
-$user_run_cmd = $echo_inputs . $pipe . "timeout -k 9 2m ";  # build the echo cmd and the pipe
+$user_run_cmd = $echo_inputs . $pipe . "timeout -k 9 1m ";  # build the echo cmd and the pipe
 
 $ref_run_cmd_path = " ../resources/references/";
 $ref_run_cmd = "";
 
-$ref_run_cmd = $echo_inputs . $pipe . "timeout -k 9 2m" . $ref_run_cmd_path . "refnjvm". $version . " ";
+$ref_run_cmd = $echo_inputs . $pipe . "timeout -k 9 1m" . $ref_run_cmd_path . "refnjvm". $version . " ";
 
 
 $refNJVMOutput = "";
@@ -190,12 +178,11 @@ if ($uploadFileOk && $uploadTestOk) {
 	$user_run_cmd .= $file_name . " ";
 
 	$test_file_name = rebuild_test_file_name($test_parts, $test_ext);
-	log_info($test_file_name);
+	//log_info($test_file_name);
 	if ($test_ext == "nj" || $test_ext == "asm") {
 		$compiler1 = "../resources/compilers/compile" . "$version ../uploads/" . $test_file_name;
 		// TODO check error possibility
 		exec($compiler1);
-		log_info($compiler1);
 		$compiled = true;
 	}
 

@@ -44,7 +44,7 @@ $test_name = $_POST["test"];
 exec("echo $test_name > .last_test.l", $res_l, $err_l);
 
 
-$def_Inputs = $_POST["defaultInput"]; //recuperation des valeurs du default input
+$def_Inputs = $_POST["defaultInput"]; 
 
 $do_gc = $_POST["gc"];
 $stack_size = $_POST["s_size"];
@@ -119,12 +119,12 @@ $echo_inputs = "echo -n " . $def_Inputs;
 
 $version = substr($test_name, 1, 1);
 $pipe = " | ";
-$user_run_cmd = $echo_inputs . $pipe . "timeout -k 9 2m ";
+$user_run_cmd = $echo_inputs . $pipe . "timeout -k 9 1m ";
 
 $ref_run_cmd_path = " ../resources/references/";                
 $ref_run_cmd = "";
 
-$ref_run_cmd = $echo_inputs . $pipe . "timeout -k 9 2m" . $ref_run_cmd_path . "refnjvm". $version . " ";
+$ref_run_cmd = $echo_inputs . $pipe . "timeout -k 9 1m" . $ref_run_cmd_path . "refnjvm". $version . " ";
 
 $refNJVMOutput = "";
 $userNJVMOutput = "";
@@ -184,7 +184,7 @@ $ref_njvm_output = ""; # to build the ref njvm outputs
 
 $i2 = 0;
 while ($i2 < count($userNJVMOutput)) {
-	$user_njvm_output .= nl2br($userNJVMOutput[$i2] . "\n"); //php comprend le nextline
+	$user_njvm_output .= nl2br($userNJVMOutput[$i2] . "\n");
 	$i2++;
 }
 

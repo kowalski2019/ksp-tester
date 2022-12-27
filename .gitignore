@@ -8,4 +8,6 @@ uploads
 *.xml
 .visites
 *.l
+src/.last_test.l
+
 
